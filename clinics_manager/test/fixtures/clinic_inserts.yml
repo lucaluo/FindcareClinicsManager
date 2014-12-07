@@ -1,0 +1,47 @@
+clinic_insert_one: 
+  uninsured_only: Y
+  low_cost: N
+  no_cost: Y
+  other_email: ""
+  fax: ""
+  appointment_phone: ""
+  lng: -83.06213
+  transc_id: 547
+  lat: 42.347428
+  other_service: ""
+  primary_email: chris.a.sy@gmail.com
+  clinic_name: Cass  Clinic
+  CHIP: N
+  clinic_id: 1261
+  user_id: 25
+  private: N
+  sliding_scale: N
+  low_cost_amount: 
+  approve: Y
+  payment_comments: ""
+  area_served: ""
+  pat_population_served: ""
+  primary_contact: Chris
+  donation_phone: ""
+  website: http://cassclinic.med.wayne.edu/index.php
+  zipcode: "48201"
+  city: Detroit
+  medicare: N
+  comments: ""
+  clinic_type: ""
+  phone_comments: ""
+  street_addr2: ""
+  street_addr1: 3745 Cass Ave.
+  update_status: UPDATE
+  medicaid: N
+  sliding_scale_low: 
+  fqhc: N
+  primary_source: newFCform
+  primary_phone: 313-883-2277
+  state: MI
+  other_comment: ""
+  payment_call_clinic: N
+  sliding_scale_high: 
+  other_languages: ""
+  alternative_name: Cass Community United Methodist Church Clinic
+  last_updated: 2014-05-12 20:18:00 Z
