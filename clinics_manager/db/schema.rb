@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(:version => 0) do
 
-<<<<<<< HEAD
-=======
+HEAD
+
   create_table "Clinic", :primary_key => "clinic_id", :force => true do |t|
     t.timestamp "last_updated",                                                                              :null => false
     t.string    "clinic_name",                                                        :default => "Unknown", :null => false
@@ -95,6 +95,4 @@ ActiveRecord::Schema.define(:version => 0) do
   create_table "Service", :primary_key => "service_abbr", :force => true do |t|
     t.text "description"
   end
-
->>>>>>> origin/master
 end
