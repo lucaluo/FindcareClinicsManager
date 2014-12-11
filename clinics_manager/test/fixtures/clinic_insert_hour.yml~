@@ -1,4 +1,4 @@
-clinic_insert_hour_one:
+clinic_insert_hour_two:
   appointment_only: N
   sun: ""
   sat: 9:00AM - 12:00PM

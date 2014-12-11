@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 0) do
 
-HEAD
 
   create_table "Clinic", :primary_key => "clinic_id", :force => true do |t|
     t.timestamp "last_updated",                                                                              :null => false
@@ -95,4 +94,5 @@ HEAD
   create_table "Service", :primary_key => "service_abbr", :force => true do |t|
     t.text "description"
   end
+
 end
