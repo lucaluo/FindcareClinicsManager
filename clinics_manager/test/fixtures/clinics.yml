@@ -40,3 +40,44 @@ clinic_one:
   private: N
   primary_contact: 
   clinic_id: 1226
+
+clinic_two: 
+  comments: 
+  fqhc: N
+  area_served: ""
+  phone_comments: 
+  uninsured_only: Y
+  fax: 
+  primary_phone: 734-474-4627
+  pat_population_served: ""
+  medicare: N
+  sliding_scale: N
+  donation_phone: 
+  zipcode: "48169"
+  sliding_scale_low: 
+  street_addr2: 
+  payment_call_clinic: N
+  low_cost: N
+  low_cost_amount: 
+  other_languages: ""
+  medicaid: N
+  sliding_scale_high: 
+  appointment_phone: 
+  state: MI
+  payment_comments: 
+  primary_email: faithmedicalclinic@charter.net
+  website: http://www.faithmedicalclinic.net
+  primary_source: CurrentFC
+  alternative_name: 
+  clinic_name: Faith Medical Clinic
+  CHIP: N
+  no_cost: Y
+  other_service: 
+  other_email: 
+  clinic_type: 
+  city: Pinckney
+  lng: -83.946334
+  last_updated: 2014-05-04 14:54:21 Z
+  private: N
+  primary_contact: 
+  clinic_id: 124

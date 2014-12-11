@@ -90,7 +90,8 @@ ActiveRecord::Schema.define(:version => 0) do
 
   add_index "Hours", ["dummy_hour_pk"], :name => "dummy_hour_pk", :unique => true
 
-  create_table "Service", :primary_key => "service_abbr", :force => true do |t|
+  create_table "Service", :id => false , :force => true do |t|
+    t.string "service_abbr"
     t.text "description"
   end
 
