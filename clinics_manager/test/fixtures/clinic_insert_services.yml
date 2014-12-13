@@ -9,5 +9,3 @@ clinic_insert_service_two:
   dummy_insert_service_pk: 2
   service_abbr: CBBB
   transc_id: 567
-
-
