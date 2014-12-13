@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 0) do
 
-
   create_table "Clinic", :primary_key => "clinic_id", :force => true do |t|
     t.timestamp "last_updated",                                                                              :null => false
     t.string    "clinic_name",                                                        :default => "Unknown", :null => false
