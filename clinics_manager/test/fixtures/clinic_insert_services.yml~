@@ -1,5 +1,0 @@
-clinic_insert_service_one:  
-  update_status: ADD
-  dummy_insert_service_pk: 1
-  service_abbr: CHRD
-  transc_id: 547

@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'clinic_insert_service'
 
 class ClinicInsertServiceTest < ActiveSupport::TestCase
   test "should ClinicInsertService be empty" do
@@ -14,10 +13,8 @@ class ClinicInsertServiceTest < ActiveSupport::TestCase
   end
 
   test "should save clinic_insert_service" do
-    #test for save
     clinic_insert_service1 = clinic_insert_services(:clinic_insert_service_one)
     assert clinic_insert_service1.save
-    #test for delete
   end
 
   test "should delete clinic_insert_service" do
@@ -26,7 +23,6 @@ class ClinicInsertServiceTest < ActiveSupport::TestCase
   end
 
   test "should validate presence of update update_status" do
-    #test for presence
     clinic_insert_service2 = clinic_insert_services(:clinic_insert_service_one)
     clinic_insert_service2.update_status = nil
     assert !clinic_insert_service2.save
