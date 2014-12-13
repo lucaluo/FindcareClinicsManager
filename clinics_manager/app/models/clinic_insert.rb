@@ -24,5 +24,3 @@ class ClinicInsert < ActiveRecord::Base
   validates :private, :inclusion  => {:in => %w(Y N)}
   validates :payment_call_clinic, :inclusion  => {:in => %w(Y N)}
 end
-
-
