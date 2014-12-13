@@ -2,6 +2,7 @@ class ClinicInsert < ActiveRecord::Base
   establish_connection "approve_#{Rails.env}"
   self.set_table_name "ClinicInsert"
   self.primary_key = "transc_id"
+  # validations include check for NULL and enum
   validates :transc_id, :presence => true
   validates :user_id, :presence => true
   validates :approve, :presence => true, :inclusion  => {:in => %w(Y N)}
