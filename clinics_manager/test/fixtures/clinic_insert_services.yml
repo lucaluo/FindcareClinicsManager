@@ -1,0 +1,11 @@
+clinic_insert_service_one:  
+  update_status: ADD
+  dummy_insert_service_pk: 1
+  service_abbr: CHRD
+  transc_id: 548
+
+clinic_insert_service_two:  
+  update_status: ADD
+  dummy_insert_service_pk: 2
+  service_abbr: CBBB
+  transc_id: 567

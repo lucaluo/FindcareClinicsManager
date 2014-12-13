@@ -10,6 +10,8 @@ class ActiveSupport::TestCase
   set_fixture_class :clinics => Clinic
   set_fixture_class :clinic_inserts => ClinicInsert
   set_fixture_class :clinic_insert_hours => ClinicInsertHour
+  set_fixture_class :clinic_insert_services => ClinicInsertService
+
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
