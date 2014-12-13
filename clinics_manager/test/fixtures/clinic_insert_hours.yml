@@ -1,4 +1,4 @@
-clinic_insert_hours_two:
+clinic_insert_hours_one:
   appointment_only: N
   sun: ""
   sat: 9:00AM - 12:00PM
@@ -16,7 +16,7 @@ clinic_insert_hours_two:
   thr: ""
   hours_call_clinic: N
 
-clinic_insert_hours_one:
+clinic_insert_hours_two:
   appointment_only: N
   sun: ""
   sat: 9:00AM - 12:00PM
