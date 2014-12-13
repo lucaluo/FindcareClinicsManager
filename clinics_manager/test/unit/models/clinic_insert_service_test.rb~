@@ -1,0 +1,9 @@
+require 'test_helper'
+
+class ClinicInsertServiceTest < ActiveSupport::TestCase
+  test "should save clinic_insert_service" do
+    clinic_insert_service = clinic_insert_services(:clinic_insert_service_one)
+    assert clinic_insert_service.save
+    assert clinic_insert_service.delete
+  end
+end
