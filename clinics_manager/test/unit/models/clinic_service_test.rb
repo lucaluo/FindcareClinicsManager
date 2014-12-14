@@ -1,0 +1,11 @@
+require 'test_helper'
+
+class ClinicServiceTest < ActiveSupport::TestCase
+  test "clinic service validate" do
+    clinic_service1 = clinic_services(:clinic_service_one)
+  	clinic_service2 = clinic_services(:clinic_service_two)
+  	clinic_service2.clinic_id = nil
+  	assert clinic_service1.save
+  	assert clinic_service2.invalid?
+  end
+end
