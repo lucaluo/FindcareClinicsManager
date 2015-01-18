@@ -1,6 +1,7 @@
 ClinicsManager::Application.routes.draw do
   get "list/listNew"
   get "list/listAll"
+  get "list/listApproved"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

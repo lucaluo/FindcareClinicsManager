@@ -4,6 +4,10 @@ class ListController < ApplicationController
   end
 
   def listAll
-  	@clinic_inserts=Clinic_insert.all
+  	@clinic_inserts=ClinicInsert.all
+  end
+
+  def listApproved
+  	@clinic_inserts=ClinicInsert.where("approve = 'Y'").all
   end
 end
