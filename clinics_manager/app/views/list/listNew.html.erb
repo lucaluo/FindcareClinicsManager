@@ -1,0 +1,15 @@
+<h1>Listing All Clinics</h1>
+ 
+<table>
+  <tr>
+    <th>Clinic Name</th>
+    <th>Approve</th>
+  </tr>
+ 
+  <% @clinic_inserts.each do |clinic| %>
+    <tr>
+      <td><%= clinic.title %></td>
+      <td><%= clinic.approve %></td>
+    </tr>
+  <% end %>
+</table>
