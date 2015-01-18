@@ -62,13 +62,12 @@ ActiveRecord::Schema.define(:version => 0) do
   add_index "Clinic", ["low_cost_amount"], :name => "idx_low_amount"
   add_index "Clinic", ["sliding_scale_low", "sliding_scale_high"], :name => "idx_sliding_scale"
 
-  create_table "Clinic_Service", :id => false, :force => true do |t|
+  create_table "Clinic_Service", :primary_key => "dummy_service_pk", :force => true do |t|
     t.string  "service_abbr",     :limit => 4, :null => false
     t.integer "clinic_id",        :limit => 8, :null => false
     t.integer "dummy_service_pk", :limit => 8, :null => false
   end
 
-  add_index "Clinic_Service", ["dummy_service_pk"], :name => "dummy_service_pk", :unique => true
   add_index "Clinic_Service", ["service_abbr"], :name => "idx_ser"
 
   create_table "Hours", :id => false, :force => true do |t|
@@ -90,7 +89,8 @@ ActiveRecord::Schema.define(:version => 0) do
 
   add_index "Hours", ["dummy_hour_pk"], :name => "dummy_hour_pk", :unique => true
 
-  create_table "Service", :primary_key => "service_abbr", :force => true do |t|
+  create_table "Service", :id => false , :force => true do |t|
+    t.string "service_abbr"
     t.text "description"
   end
 
