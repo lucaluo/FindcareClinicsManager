@@ -2,6 +2,5 @@ clinic_service_one:
   service_abbr: ACUT
   clinic_id: 123
 
-
 clinic_service_two:
   clinic_id: 1235

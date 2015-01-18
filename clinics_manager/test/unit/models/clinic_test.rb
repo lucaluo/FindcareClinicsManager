@@ -11,9 +11,5 @@ class ClinicTest < ActiveSupport::TestCase
 
     clinic3 = clinics(:clinic_three)
     assert clinic3.save
-    # clinic_service = ClinicService.create(clinic_id: clinic3.clinic_id, service_abbr: "ACUT")
-    # clinic_service = ClinicService.create(clinic_id: clinic3.clinic_id, service_abbr: "ACU")
-    # assert_not_nil clinic3.services.find("ACUT")
-    # assert_not_nil clinic3.services.find("ACU")
   end
 end
