@@ -10,6 +10,9 @@ class ActiveSupport::TestCase
   set_fixture_class :clinics => Clinic
   set_fixture_class :clinic_inserts => ClinicInsert
   set_fixture_class :clinic_services => ClinicService
+  set_fixture_class :clinic_insert_hours => ClinicInsertHour
+  set_fixture_class :clinic_insert_services => ClinicInsertService
+  set_fixture_class :hours => Hours
   set_fixture_class :services => Service
   fixtures :all
 
