@@ -1,9 +1,9 @@
 ClinicsManager::Application.routes.draw do
 
-  match 'listNew' => 'list#listNew'
+  match 'list/New' => 'list#listNew'
   match 'results' => 'list#listNew'
-  match 'listAll' => 'list#listAll'
-  match 'listApproved' => 'list#listApproved'
+  match 'list/All' => 'list#listAll'
+  match 'list/Approved' => 'list#listApproved'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

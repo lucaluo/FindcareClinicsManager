@@ -1,19 +1,39 @@
-<h1>Listing All Clinics</h1>
- 
-<table>
-  <tr>
-    <th>Clinic ID</th>
-    <th>Clinic Name</th>
-    <th>Update Status</th>
-    <th>Approve</th>
-  </tr>
- 
-  <% @clinic_inserts.each do |clinic| %>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Listing All Clinics</h1>
+  <table>
+    <tbody>
     <tr>
-      <td><%= clinic.clinic_id %></td>
-      <td><%= clinic.clinic_name %></td>
-      <td><%= clinic.update_status %></td>
-      <td><%= clinic.approve %></td>
+      <th>Clinic ID</th>
+      <th>Clinic Name</th>
     </tr>
-  <% end %>
-</table>
+   <h1>UPDATE:</h1>
+      <% @clinic_update.each do |each| %>
+        <tr>
+          <td><%= each.clinic_id %></td>
+          <td><a href="/results?<%= each.clinic_id %>&add=false"><%= each.clinic_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+    <tr>
+      <th>Clinic Name</th>
+    </tr>
+   <h1>ADD:</h1>
+      <% @add_clinic_inserts.each do |each| %>
+        <tr>
+          <td><a href="/results?<%= each.transc_id %>&add=true"> <%= each.clinic_name %> </a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</body>
+
+</html>
