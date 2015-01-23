@@ -45,5 +45,11 @@ class ClinicInsertServiceTest < ActiveSupport::TestCase
     clinic_insert_service6.dummy_insert_service_pk = nil
     assert !clinic_insert_service6.save
   end
+  
+  test "should be able to access with clinic_insert" do
+    clinic_insert = clinic_inserts(:clinic_insert_one)
+    ClinicInsertService.create(:transc_id=> clinic_insert, :service_abbr=> "ACUT")
+    assert_not_nil clinic_insert.clinic_insert_service
+  end
 
 end
