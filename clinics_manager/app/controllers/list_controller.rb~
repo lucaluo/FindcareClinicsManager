@@ -1,0 +1,5 @@
+class ListController < ApplicationController
+  def listNew
+  	@clinic_inserts = ClinicInsert.where('update_status' => :UPDATE)
+  end
+end
