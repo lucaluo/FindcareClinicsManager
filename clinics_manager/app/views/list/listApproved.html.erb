@@ -1,0 +1,16 @@
+<h1>Listing Approved Clinics</h1>
+ 
+<table>
+  <tr>
+    <th>Clinic Name</th>
+    <th>Approve</th>
+  </tr>
+ 
+  <% @clinic_inserts.each do |clinic| %>
+    <tr>
+      <td><%= clinic.clinic_name %></td>
+      <td><%= clinic.update_status %></td>
+      <td><%= clinic.approve %></td>
+    </tr>
+  <% end %>
+</table>
