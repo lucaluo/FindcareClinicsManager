@@ -2,15 +2,19 @@
  
 <table>
   <tr>
+    <th>Clinic ID</th>
     <th>Clinic Name</th>
+    <th>Update Status</th>
     <th>Approve</th>
   </tr>
  
   <% @clinic_inserts.each do |clinic| %>
     <tr>
+      <td><%= clinic.clinic_id %></td>
       <td><%= clinic.clinic_name %></td>
       <td><%= clinic.update_status %></td>
       <td><%= clinic.approve %></td>
+      <%# link_to "Process", {:controller => "aaa", :id => "aaa"} %>
     </tr>
   <% end %>
 </table>

@@ -1,5 +1,5 @@
 ClinicsManager::Application.routes.draw do
-  get "list/listNew"
+  match "listNew" => "listNew"
   get "list/listAll"
   get "list/listApproved"
 
