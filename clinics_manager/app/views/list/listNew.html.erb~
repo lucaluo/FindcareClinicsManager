@@ -1,0 +1,14 @@
+<h1>Listing New Clinics</h1>
+ 
+<table>
+  <tr>
+    <th>Clinic Name</th>
+    <th>Need to Update</th>
+  </tr>
+ 
+  <% @clinic_inserts.each do |each| %>
+    <tr>
+      <td><%= each.update %></td>
+    </tr>
+  <% end %>
+</table>
