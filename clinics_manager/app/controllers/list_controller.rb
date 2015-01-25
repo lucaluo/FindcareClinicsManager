@@ -24,7 +24,6 @@ class ListController < ApplicationController
   	@clinic_delete = Clinic.where('clinic_id' => clinic_delete_id)
 
   	@add_clinic_inserts = ClinicInsert.where('approve' => :Y).where('update_status' => :ADD)
-
   end
 
   private
