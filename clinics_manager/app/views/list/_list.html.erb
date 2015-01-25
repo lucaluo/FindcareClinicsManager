@@ -1,20 +1,16 @@
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-  <h1>Listing Approved Clinics</h1>
-  <table>
+<table>
     <tbody>
     <tr>
       <th>Clinic ID</th>
       <th>Clinic Name</th>
+      <th>Status</th>
     </tr>
    <h1>UPDATE:</h1>
       <% @clinic_update.each do |each| %>
         <tr>
           <td><%= each.clinic_id %></td>
           <td><a href="/results?<%= each.clinic_id %>&add=false"><%= each.clinic_name %></td>
+          <td><%= each.approve %></td>
         </tr>
       <% end %>
     </tbody>
@@ -33,7 +29,3 @@
       <% end %>
     </tbody>
   </table>
-
-</body>
-
-</html>
