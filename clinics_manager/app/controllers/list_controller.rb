@@ -10,6 +10,7 @@ class ListController < ApplicationController
 
   	#select from the table ClinicInsert all the clinics that added
   	@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
+    render "list/listAll"
   end
 
   def listAll
