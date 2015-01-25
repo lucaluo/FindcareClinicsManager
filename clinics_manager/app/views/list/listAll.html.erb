@@ -1,31 +1,37 @@
-<<<<<<< HEAD
-<h1>Listing All Clinics</h1>
- 
-<table>
-  <tr>
-    <th>Clinic Name</th>
-    <th>Approve</th>
-  </tr>
- 
-  <% @clinic_inserts.each do |clinic| %>
-    <tr>
-      <td><%= clinic.clinic_name %></td>
-      <td><%= clinic.update_status %></td>
-      <td><%= clinic.approve %></td>
-      
-    </tr>
-  <% end %>
-</table>
-=======
 <html>
 <head>
-  <title></title>
+  <title><%= @title %></title>
 </head>
 <body>
-  <h1>Listing All Clinics</h1>
-  <%= render "list" %>
+  <h1><%= @header %></h1>
+  <table>
+    <tbody>
+    <tr>
+      <th>Clinic ID</th>
+      <th>Clinic Name</th>
+    </tr>
+   <h1>UPDATE:</h1>
+      <% @clinic_update.each do |each| %>
+        <tr>
+          <td><%= each.clinic_id %></td>
+          <td><a href="/results?<%= each.clinic_id %>&add=false"><%= each.clinic_name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
+  <table>
+    <tbody>
+    <tr>
+      <th>Clinic Name</th>
+    </tr>
+   <h1>ADD:</h1>
+      <% @add_clinic_inserts.each do |each| %>
+        <tr>
+          <td><a href="/results?<%= each.transc_id %>&add=true"> <%= each.clinic_name %> </a></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </body>
-
 </html>
->>>>>>> c2dbc4ae289429c3f084a5c8b78a0ec0ee82f1c1
