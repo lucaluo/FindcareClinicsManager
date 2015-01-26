@@ -1,15 +1,15 @@
 class ListController < ApplicationController
   def listNew
-  	clinic_update_id = ClinicInsert.select('clinic_id').where('approve' => :N).where('update_status' => :UPDATE).map(&:'clinic_id').uniq
-  	@clinic_update = Clinic.where('clinic_id' => clinic_update_id)
+  	#clinic_update_id = ClinicInsert.select('clinic_id').where('approve' => :N).where('update_status' => :UPDATE).map(&:'clinic_id').uniq
+  	#@clinic_update = Clinic.where('clinic_id' => clinic_update_id)
   	
 	  #clinic_delete_id = ClinicInsert.select('clinic_id').where('update_status' => :DELETE).where('approve' => 'N').map(&:'clinic_id').uniq
   	#@clinic_delete = Clinic.where('clinic_id' => clinic_delete_id)
 
   	#select from the table ClinicInsert all the clinics that added
-  	@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
+  	#@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
 
-    clinic_insert = ClinicInsert.order(:clinic_id)
+    clinic_insert = ClinicInsert.where('approve' => :N).order(:clinic_id)
 
     @h = createHash(clinic_insert)
 
@@ -17,27 +17,15 @@ class ListController < ApplicationController
   end
 
   def listAll
-  	clinic_update_id = ClinicInsert.select('clinic_id').where('update_status' => :UPDATE).map(&:'clinic_id').uniq
-  	@clinic_update = Clinic.where('clinic_id' => clinic_update_id)
-  	clinic_delete_id = ClinicInsert.select('clinic_id').where('update_status' => :DELETE).map(&:'clinic_id').uniq
-  	@clinic_delete = Clinic.where('clinic_id' => clinic_delete_id)
+  	clinic_insert = ClinicInsert.order(:clinic_id)
 
-  	@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD)
-    @title = "List New"
-    @header = "List New Clinics"
-    render "list/listAll"
+    @h = createHash(clinic_insert)
   end
 
   def listApproved
-  	clinic_update_id = ClinicInsert.select('clinic_id').where('approve' => :Y).where('update_status' => :UPDATE).map(&:'clinic_id').uniq
-  	@clinic_update = Clinic.where('clinic_id' => clinic_update_id)
-  	clinic_delete_id = ClinicInsert.select('clinic_id').where('approve' => :Y).where('update_status' => :DELETE).map(&:'clinic_id').uniq
-  	@clinic_delete = Clinic.where('clinic_id' => clinic_delete_id)
+  	clinic_insert = ClinicInsert.where('approve' => :Y).order(:clinic_id)
 
-  	@add_clinic_inserts = ClinicInsert.where('approve' => :Y).where('update_status' => :ADD)
-    @title = "List New"
-    @header = "List New Clinics"
-    render "list/listAll"
+    @h = createHash(clinic_insert)
   end
 
   def createHash(item_list)
