@@ -1,6 +1,11 @@
 class ApprDenyController < ApplicationController
   def approve
+    @par = params[:clinic] 
   end
+
+  # def form_params
+  #   params.require(:clinic_name)#.permit(:first_name, :last_name, :other_stuff)
+  # end
 
   def deny
     @clinic_insert = ClinicInsert.find(params[:transc_id])

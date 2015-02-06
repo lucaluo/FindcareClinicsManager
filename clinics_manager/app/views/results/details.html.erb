@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-  <%= form_for @clinic, :url => {:action => "get_form"}, :html => {:class => ""} do |f| %>
+  <%= form_for @clinic, :url => {:action => "approve", :controller => "appr_deny"}, :html => {:class => ""} do |f| %>
   
     clinic_name:<br>
     <% @clinic_insert.each do |v| %>
