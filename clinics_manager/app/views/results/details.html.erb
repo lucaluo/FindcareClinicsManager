@@ -13,14 +13,14 @@
 </head>
 
 <body>
-  <%= form_for @clinic, :url => {:action => "get_form"}, :html => {:class => ""} do |f| %>
-  
+  <%= form_for @clinic, :url => {:action => "approve", :controller => "appr_deny"}, :html => {:class => ""} do |f| %>
+    <input type="hidden" name="transc_id" value="<%= @transc_id %>">
     clinic_name:<br>
     <% @clinic_insert.each do |v| %>
       <%= f.radio_button :clinic_name, v.clinic_name %><%= v.clinic_name %><br>
     <% end %>
     <%= f.radio_button :clinic_name, "" %>
-    <input id='other_clinic_name' type='text'>
+    <input id='other_clinic_name' type='text' class="other">
     <br>
 
     alternative_name:<br>
@@ -28,7 +28,7 @@
       <%= f.radio_button :alternative_name, v.alternative_name %><%= v.alternative_name %><br>
     <% end %>
     <%= f.radio_button :alternative_name, "" %>
-    <input id='other_alternative_name' type='text'>
+    <input id='other_alternative_name' type='text' class="other">
     <br>
 
     lat:<br>
@@ -36,7 +36,7 @@
       <%= f.radio_button :lat, v.lat %><%= v.lat %><br>
     <% end %>
     <%= f.radio_button :lat, "" %>
-    <input id='other_lat' type='text'>
+    <input id='other_lat' type='text' class="other">
     <br>
 
     lng:<br>
@@ -44,8 +44,290 @@
     <%= f.radio_button :lng, v.lng %><%= v.lng %><br>
     <% end %>
     <%= f.radio_button :lng, "" %>
-    <input id='other_lng' type='text'>
+    <input id='other_lng' type='text' class="other">
     <br>
+    
+    primary_source:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :primary_source, v.primary_source %><%= v.primary_source %><br>
+    <% end %>
+    <%= f.radio_button :primary_source, "" %>
+    <input id='other_primary_source' type='text' class="other">
+    <br>
+    
+    street_addr1:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :street_addr1, v.street_addr1 %><%= v.street_addr1 %><br>
+    <% end %>
+    <%= f.radio_button :street_addr1, "" %>
+    <input id='other_street_addr1' type='text' class="other">
+    <br>
+    
+    street_addr2:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :street_addr2, v.street_addr2 %><%= v.street_addr2 %><br>
+    <% end %>
+    <%= f.radio_button :street_addr2, "" %>
+    <input id='other_street_addr2' type='text' class="other">
+    <br>
+    
+    city:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :city, v.city %><%= v.city %><br>
+    <% end %>
+    <%= f.radio_button :city, "" %>
+    <input id='other_city' type='text' class="other">
+    <br>
+    
+    state:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :state, v.state %><%= v.state %><br>
+    <% end %>
+    <%= f.radio_button :state, "" %>
+    <input id='other_state' type='text' class="other">
+    <br>
+    
+    zipcode:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :zipcode, v.zipcode %><%= v.zipcode %><br>
+    <% end %>
+    <%= f.radio_button :zipcode, "" %>
+    <input id='other_zipcode' type='text' class="other">
+    <br>
+    
+    primary_phone:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :primary_phone, v.primary_phone %><%= v.primary_phone %><br>
+    <% end %>
+    <%= f.radio_button :primary_phone, "" %>
+    <input id='other_primary_phone' type='text' class="other">
+    <br>
+    
+    appointment_phone:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :appointment_phone, v.appointment_phone %><%= v.appointment_phone %><br>
+    <% end %>
+    <%= f.radio_button :appointment_phone, "" %>
+    <input id='other_appointment_phone' type='text' class="other">
+    <br>
+    
+    
+    donation_phone:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :donation_phone, v.donation_phone %><%= v.donation_phone %><br>
+    <% end %>
+    <%= f.radio_button :donation_phone, "" %>
+    <input id='other_donation_phone' type='text' class="other">
+    <br>
+    
+    phone_comments:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :phone_comments, v.phone_comments %><%= v.phone_comments %><br>
+    <% end %>
+    <%= f.radio_button :phone_comments, "" %>
+    <input id='other_phone_comments' type='text' class="other">
+    <br>
+    
+    fax:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :fax, v.fax %><%= v.fax %><br>
+    <% end %>
+    <%= f.radio_button :fax, "" %>
+    <input id='other_fax' type='text' class="other">
+    <br>
+    
+    clinic_type:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :clinic_type, v.clinic_type %><%= v.clinic_type %><br>
+    <% end %>
+    <%= f.radio_button :clinic_type, "" %>
+    <input id='other_clinic_type' type='text' class="other">
+    <br>
+    
+    website:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :website, v.website %><%= v.website %><br>
+    <% end %>
+    <%= f.radio_button :website, "" %>
+    <input id='other_website' type='text' class="other">
+    <br>
+    
+    primary_contact:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :primary_contact, v.primary_contact %><%= v.primary_contact %><br>
+    <% end %>
+    <%= f.radio_button :primary_contact, "" %>
+    <input id='other_primary_contact' type='text' class="other">
+    <br>
+    
+    primary_email:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :primary_email, v.primary_email %><%= v.primary_email %><br>
+    <% end %>
+    <%= f.radio_button :primary_email, "" %>
+    <input id='other_primary_email' type='text' class="other">
+    <br>
+    
+    other_email:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :other_email, v.other_email %><%= v.other_email %><br>
+    <% end %>
+    <%= f.radio_button :other_email, "" %>
+    <input id='other_other_email' type='text' class="other">
+    <br>
+    
+    fqhc:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :fqhc, v.fqhc %><%= v.fqhc %><br>
+    <% end %>
+    <%= f.radio_button :fqhc, "" %>
+    <input id='other_fqhc' type='text' class="other">
+    <br>
+    
+    other_languages:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :other_languages, v.other_languages %><%= v.other_languages %><br>
+    <% end %>
+    <%= f.radio_button :other_languages, "" %>
+    <input id='other_other_languages' type='text' class="other">
+    <br>
+    
+    pat_population_served:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :pat_population_served, v.pat_population_served %><%= v.pat_population_served %><br>
+    <% end %>
+    <%= f.radio_button :pat_population_served, "" %>
+    <input id='other_pat_population_served' type='text' class="other">
+    <br>
+    
+    area_served:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :area_served, v.area_served %><%= v.area_served %><br>
+    <% end %>
+    <%= f.radio_button :area_served, "" %>
+    <input id='other_area_served' type='text' class="other">
+    <br>
+    
+    comments:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :comments, v.comments %><%= v.comments %><br>
+    <% end %>
+    <%= f.radio_button :comments, "" %>
+    <input id='other_comments' type='text' class="other">
+    <br>
+    
+    other_service:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :other_service, v.other_service %><%= v.other_service %><br>
+    <% end %>
+    <%= f.radio_button :other_service, "" %>
+    <input id='other_other_service' type='text' class="other">
+    <br>
+    
+    low_cost_amount:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :low_cost_amount, v.low_cost_amount %><%= v.low_cost_amount %><br>
+    <% end %>
+    <%= f.radio_button :low_cost_amount, "" %>
+    <input id='other_low_cost_amount' type='text' class="other">
+    <br>
+    
+    sliding_scale_low:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :sliding_scale_low, v.sliding_scale_low %><%= v.sliding_scale_low %><br>
+    <% end %>
+    <%= f.radio_button :sliding_scale_low, "" %>
+    <input id='other_sliding_scale_low' type='text' class="other">
+    <br>
+    
+    sliding_scale_high:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :sliding_scale_high, v.sliding_scale_high %><%= v.sliding_scale_high %><br>
+    <% end %>
+    <%= f.radio_button :sliding_scale_high, "" %>
+    <input id='other_sliding_scale_high' type='text' class="other">
+    <br>
+    
+    no_cost:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :no_cost, v.no_cost %><%= v.no_cost %><br>
+    <% end %>
+    <%= f.radio_button :no_cost, "" %>
+    <input id='other_no_cost' type='text' class="other">
+    <br>
+    
+    low_cost:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :low_cost, v.low_cost %><%= v.low_cost %><br>
+    <% end %>
+    <%= f.radio_button :low_cost, "" %>
+    <input id='other_low_cost' type='text' class="other">
+    <br>
+    
+    sliding_scale:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :sliding_scale, v.sliding_scale %><%= v.sliding_scale %><br>
+    <% end %>
+    <%= f.radio_button :sliding_scale, "" %>
+    <input id='other_sliding_scale' type='text' class="other">
+    <br>
+    
+    uninsured_only:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :uninsured_only, v.uninsured_only %><%= v.uninsured_only %><br>
+    <% end %>
+    <%= f.radio_button :uninsured_only, "" %>
+    <input id='other_uninsured_only' type='text' class="other">
+    <br>
+    
+    medicare:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :medicare, v.medicare %><%= v.medicare %><br>
+    <% end %>
+    <%= f.radio_button :medicare, "" %>
+    <input id='other_medicare' type='text' class="other">
+    <br>
+    
+    medicaid:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :medicaid, v.medicaid %><%= v.medicaid %><br>
+    <% end %>
+    <%= f.radio_button :medicaid, "" %>
+    <input id='other_medicaid' type='text' class="other">
+    <br>
+    
+    CHIP:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :CHIP, v.CHIP %><%= v.CHIP %><br>
+    <% end %>
+    <%= f.radio_button :CHIP, "" %>
+    <input id='other_CHIP' type='text' class="other">
+    <br>
+    
+    private:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :private, v.private %><%= v.private %><br>
+    <% end %>
+    <%= f.radio_button :private, "" %>
+    <input id='other_private' type='text' class="other">
+    <br>
+    
+    payment_call_clinic:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :payment_call_clinic, v.payment_call_clinic %><%= v.payment_call_clinic %><br>
+    <% end %>
+    <%= f.radio_button :payment_call_clinic, "" %>
+    <input id='other_payment_call_clinic' type='text' class="other">
+    <br>
+    
+    payment_comments:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :payment_comments, v.payment_comments %><%= v.payment_comments %><br>
+    <% end %>
+    <%= f.radio_button :payment_comments, "" %>
+    <input id='other_payment_comments' type='text' class="other">
+    <br>
+    
     <%= f.submit "Submit" %>
   <% end %>
 </body>
