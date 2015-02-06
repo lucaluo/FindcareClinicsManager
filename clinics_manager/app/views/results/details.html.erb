@@ -4,7 +4,7 @@
 </head>
 <body>
   <%= form_for @clinic, :url => {:action => "approve", :controller => "appr_deny"}, :html => {:class => ""} do |f| %>
-  
+    <input type="hidden" name="transc_id" value="<%= @transc_id %>">
     clinic_name:<br>
     <% @clinic_insert.each do |v| %>
       <%= f.radio_button :clinic_name, v.clinic_name %><%= v.clinic_name %><br>
