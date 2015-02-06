@@ -1,4 +1,6 @@
 ClinicsManager::Application.routes.draw do
+  match 'results' => 'results#details'
+  match 'postresults' => 'results#get_form'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
