@@ -4,7 +4,10 @@
 	<title></title>
 
 <style type="text/css">
-#hidden_link {
+/*.content:hover{
+	background: #42B4E6;
+}*/
+.hidden_link {
 	text-decoration: none;
 	color: black;
 }
@@ -18,24 +21,46 @@
 			<th>Clinic ID</th>
 			<th>Clinic Name</th>
 			<th>Clinic Status</th>
+			<th>Clinic Update Time</th>
 		</tr>
-		<% @h.each do |key, item| %>
+		<% @h.first do |key, item| %>
+			<tbody style="cursor: pointer;" >
 			<% item.each do |record| %>
-				<tr style="cursor: pointer;">
-					<td><a href="results?<%= record.transc_id %>" id="hidden_link"><%= record.clinic_id %></a></td>
+				<tr class="content" name="<%= record.clinic_id %>" >
+					<td><a href="results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
 					<td><%= record.clinic_name %></td>
 					<td><%= record.update_status %></td>
+					<td><%= record.last_updated %></td>
 				</tr>
 			<% end %>
+			</tbody>
+		<% end %>
+
+		<% @h.each do |key, item| %>
+			<tbody style="cursor: pointer;" class="content">
+			<% item.each do |record| %>
+				<tr>
+					<td><a href="results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
+					<td><%= record.clinic_name %></td>
+					<td><%= record.update_status %></td>
+					<td><%= record.last_updated %></td>
+				</tr>
+			<% end %>
+			</tbody>
 		<% end %>
 	</table>
 
 	<script type="text/javascript">
-		$('tr').click( function() {
+		$('.content').click( function() {
 		    window.location = $(this).find('a').attr('href');
-		}).hover( function() {
-		    $(this).toggleClass('hover');
-		});
+		}).mouseover( function(){
+			console.log("mouseover!");
+			var myName = $(this).attr('name');
+			var x = document.getElementsByName(myName);
+			for(var i = 0; i < x.length; i++){
+				x[i].setAttribute("style", "background-color: red;");
+			}
+		})
 	</script>
 </body>
 
