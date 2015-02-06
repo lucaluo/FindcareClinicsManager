@@ -35,5 +35,11 @@ class ClinicInsertHourTest < ActiveSupport::TestCase
     clinic_insert_hours_1 = clinic_insert_hours(:clinic_insert_hours_one)
     assert clinic_insert_hours_1.delete
   end
+  
+  test "should be able to access with clinic_insert" do
+    clinic_insert = clinic_inserts(:clinic_insert_one)
+    ClinicInsertHour.create(:transc_id=> clinic_insert)
+    assert_not_nil clinic_insert.clinic_insert_hour
+  end
 
 end
