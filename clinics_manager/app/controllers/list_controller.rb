@@ -8,7 +8,7 @@ class ListController < ApplicationController
 
   	#select from the table ClinicInsert all the clinics that added
   	#@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
-    clinic_insert = ClinicInsert.where('approve' => :N)
+    clinic_insert = ClinicInsert.all
 
     @h = createHash(clinic_insert).sort_by { |key, value| key || 0 }
 

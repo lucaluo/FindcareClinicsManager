@@ -1,8 +1,17 @@
 <html>
 <head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<title></title>
+
+<style type="text/css">
+#hidden_link {
+	text-decoration: none;
+	color: black;
+}
+</style>
 </head>
 <body>
+	
 	<h1>Listing New Clinics</h1>
 	<table>
 		<tr>
@@ -12,8 +21,8 @@
 		</tr>
 		<% @h.each do |key, item| %>
 			<% item.each do |record| %>
-				<tr>
-					<td><%= record.clinic_id %></td>
+				<tr style="cursor: pointer;">
+					<td><a href="results?<%= record.transc_id %>" id="hidden_link"><%= record.clinic_id %></a></td>
 					<td><%= record.clinic_name %></td>
 					<td><%= record.update_status %></td>
 				</tr>
@@ -21,6 +30,13 @@
 		<% end %>
 	</table>
 
+	<script type="text/javascript">
+		$('tr').click( function() {
+		    window.location = $(this).find('a').attr('href');
+		}).hover( function() {
+		    $(this).toggleClass('hover');
+		});
+	</script>
 </body>
 
 </html>
