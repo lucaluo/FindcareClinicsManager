@@ -5,33 +5,20 @@
 <body>
 	<h1>Listing New Clinics</h1>
 	<table>
-		<tbody>
-	  <tr>
-	    <th>Clinic ID</th>
-	    <th>Clinic Name</th>
-	  </tr>
-	 <h1>UPDATE:</h1>
-		  <% @clinic_update.each do |each| %>
-		    <tr>
-		    	<td><%= each.clinic_id %></td>
-		      <td><a href="/results?clinic_id=<%= each.clinic_id %>&add=false"><%= each.clinic_name %></td>
-		    </tr>
-		  <% end %>
-	  </tbody>
-	</table>
-
-	<table>
-		<tbody>
-	  <tr>
-	    <th>Clinic Name</th>
-	  </tr>
-	 <h1>ADD:</h1>
-		  <% @add_clinic_inserts.each do |each| %>
-		    <tr>
-		      <td><a href="/results?transc_id=<%= each.transc_id %>&add=true"> <%= each.clinic_name %> </a></td>
-		    </tr>
-		  <% end %>
-	  </tbody>
+		<tr>
+			<th>Clinic ID</th>
+			<th>Clinic Name</th>
+			<th>Clinic Status</th>
+		</tr>
+		<% @h.each do |key, item| %>
+			<% item.each do |record| %>
+				<tr>
+					<td><%= record.clinic_id %></td>
+					<td><%= record.clinic_name %></td>
+					<td><%= record.update_status %></td>
+				</tr>
+			<% end %>
+		<% end %>
 	</table>
 
 </body>

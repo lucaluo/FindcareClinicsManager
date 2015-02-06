@@ -8,7 +8,12 @@ class ListController < ApplicationController
 
   	#select from the table ClinicInsert all the clinics that added
   	@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
-    render "list/listAll"
+
+    clinic_insert = ClinicInsert.order(:clinic_id)
+
+    @h = createHash(clinic_insert)
+
+    #render "list/listAll"
   end
 
   def listAll
@@ -30,19 +35,14 @@ class ListController < ApplicationController
 
   end
 
-  private
-  def removeDup(clinics)
-  	uniques = []
-    clinics.each_with_index do |r, i|
-  	  id = uniques.collect {|e| e[:clinic_id]}
-  	  if !id.include? r[:clinic_id] || r[:update_status]=='ADD'
-  	    uniques.push(r)
-      else
-        clinics[i] = nil
-      end
+  def createHash(item_list)
+    #create a hash table mapping 
+    #from clinic id to a list of insert record
+    h = Hash.new {|h, k| h[k] = []}
+    item_list.each do |item|
+      h[item[:clinic_id]] << item
     end
-    clinics.compact!
-    return clinics
+    return h
   end
 
 end
