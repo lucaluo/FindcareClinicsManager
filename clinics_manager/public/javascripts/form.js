@@ -30,7 +30,11 @@ $(function(){
 
 $('#submit_button').click(function(){
 	console.log("submit");
-	$('#clinic_approve').attr("value", $('#clinic_other_approve').attr("value");
+	$('.other').each(function (){
+		this.prev().attr("value", this.attr("value"));
+	});
+		
+	/*$('#clinic_approve').attr("value", $('#clinic_other_approve').attr("value");
 	$('#clinic_update_status').attr("value", $('#clinic_other_update_status').attr("value");
 	$('#clinic_other_comment').attr("value", $('#clinic_other_other_comment').attr("value");
 	$('#clinic_last_updated').attr("value", $('#clinic__other_last_updated').attr("value");
@@ -56,5 +60,6 @@ $('#submit_button').click(function(){
 	$('#clinic_street_addr1').attr("value", $('#clinic_other_street_addr1').attr("value");
 	$('#clinic_streer_addr2').attr("value", $('#clinic_other_streer_addr2').attr("value");
 	$('#clinic_city').attr("value", $('#clinic_other_city').attr("value");
-	$('#clinic_state').attr("value", $('#clinic_other_state').attr("value");
+	$('#clinic_state').attr("value", $('#clinic_other_state').attr("value");*/
+
 });

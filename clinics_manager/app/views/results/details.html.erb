@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+    $('#submit_button').click(function(){
+      console.log("submit");
+      $('.other').each(function (){
+        this.prev().attr("value", this.attr("value"));
+      });
+    }); 
+  </script>
 </head>
+
 <body>
   <%= form_for @clinic, :url => {:action => "get_form"}, :html => {:class => ""} do |f| %>
   
