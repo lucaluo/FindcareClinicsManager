@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <%= form_for @clinic, url: {action: "get_form"}, html: {class: ""} do |f| %>
+  
+    clinic_name:<br>
+    <% @clinic_insert.each do |v| %>
+      <%= f.radio_button :clinic_name, v.clinic_name %><%= v.clinic_name %><br>
+    <% end %>
+    <%= f.radio_button :clinic_name, "" %>
+    <input id='other_clinic_name' type='text'>
+    <br>
+
+    alternative_name:<br>
+    <% @clinic_insert.each do |v| %>
+      <%= f.radio_button :alternative_name, v.alternative_name %><%= v.alternative_name %><br>
+    <% end %>
+    <%= f.radio_button :alternative_name, "" %>
+    <input id='other_alternative_name' type='text'>
+    <br>
+
+    lat:<br>
+    <% @clinic_insert.each do |v| %>
+      <%= f.radio_button :lat, v.lat %><%= v.lat %><br>
+    <% end %>
+    <%= f.radio_button :lat, "" %>
+    <input id='other_lat' type='text'>
+    <br>
+
+    lng:<br>
+    <% @clinic_insert.each do |v| %>
+    <%= f.radio_button :lng, v.lng %><%= v.lng %><br>
+    <% end %>
+    <%= f.radio_button :lng, "" %>
+    <input id='other_lng' type='text'>
+    <br>
+    <%= f.submit "Submit" %>
+  <% end %>
+</body>
+</html>
