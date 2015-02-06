@@ -23,24 +23,12 @@
 			<th>Clinic Status</th>
 			<th>Clinic Update Time</th>
 		</tr>
-		<% @h.first do |key, item| %>
-			<tbody style="cursor: pointer;" >
-			<% item.each do |record| %>
-				<tr class="content" name="<%= record.clinic_id %>" >
-					<td><a href="results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
-					<td><%= record.clinic_name %></td>
-					<td><%= record.update_status %></td>
-					<td><%= record.last_updated %></td>
-				</tr>
-			<% end %>
-			</tbody>
-		<% end %>
 
 		<% @h.each do |key, item| %>
-			<tbody style="cursor: pointer;" class="content">
+			<tbody style="cursor: pointer;"  >
 			<% item.each do |record| %>
-				<tr>
-					<td><a href="results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
+				<tr class="content" name="clinic<%= record.clinic_id %>">
+					<td><a href="/results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
 					<td><%= record.clinic_name %></td>
 					<td><%= record.update_status %></td>
 					<td><%= record.last_updated %></td>
@@ -53,14 +41,14 @@
 	<script type="text/javascript">
 		$('.content').click( function() {
 		    window.location = $(this).find('a').attr('href');
-		}).mouseover( function(){
+		}).hover( function(){
 			console.log("mouseover!");
 			var myName = $(this).attr('name');
-			var x = document.getElementsByName(myName);
-			for(var i = 0; i < x.length; i++){
-				x[i].setAttribute("style", "background-color: red;");
-			}
-		})
+			$("[name='"+myName+"']").css("background-color", "#42B4E6");
+		}).on('mouseleave', function(){
+			var myName = $(this).attr('name');
+			$("[name='"+myName+"']").css("background-color", "white");
+		});
 	</script>
 </body>
 
