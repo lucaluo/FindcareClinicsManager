@@ -7,7 +7,8 @@ class ApprDenyControllerTest < ActionController::TestCase
   end
 
   test "should get deny" do
-    get :deny
+    assert_difference('ClinicInsert.where()')
+    post :deny, transc_id: 1
     assert_response :success
   end
 
