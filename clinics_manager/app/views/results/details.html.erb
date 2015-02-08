@@ -413,7 +413,6 @@
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
         <input type='text' class="other"><br><br>
-        
       <% end %>
     <% end %>
     
@@ -426,10 +425,10 @@
         console.log("ready");
         $('#clinic_submit').click(function(){
             console.log("submit");
-            $('.other').each(function (){
-                console.log("value: " + this.attr("value"));
-                console.log("prev_value: " + this.prev().attr("value"));
-                this.prev().attr("value", this.attr("value"));
+            $('.other').each(function(){
+                console.log("value: " + $(this).attr("value"));
+                console.log("prev_value: " + $(this).prev().attr("value"));
+                $(this).prev().attr("value", $(this).attr("value"));
             });
         }); 
     });
