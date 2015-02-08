@@ -390,6 +390,14 @@
         <input type="radio" name="hour[<%= type %>][sun]" value="">
         <input type='text' class="other"><br><br>
         
+        appointment_only:<br>
+        <% array.each do |hour| %>
+         <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>">
+         <%= hour.appointment_only %><br>
+        <% end %>
+        <input type="radio" name="hour[<%= type %>][appointment_only]" value="">
+        <input type='text' class="other"><br><br>
+        
         comment:<br>
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>">
