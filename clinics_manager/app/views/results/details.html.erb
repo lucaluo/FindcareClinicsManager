@@ -422,12 +422,19 @@
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>
-    $('#submit_button').click(function(){
-      console.log("submit");
-      $('.other').each(function (){
-        this.prev().attr("value", this.attr("value"));
-      });
-    }); 
+
+    $(function(){
+        console.log("ready");
+        $('#clinic_submit').click(function(){
+            console.log("submit");
+            $('.other').each(function (){
+                console.log("value: " + this.attr("value"));
+                console.log("prev_value: " + this.prev().attr("value"));
+                this.prev().attr("value", this.attr("value"));
+            });
+        }); 
+    });
+
   </script>
 </body>
 </html>

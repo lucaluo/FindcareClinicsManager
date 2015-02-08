@@ -30,12 +30,6 @@ $(function(){
 	});
 });*/
 
-$('#submit_button').click(function(){
-	console.log("submit");
-	$('.other').each(function (){
-		this.prev().attr("value", this.attr("value"));
-	});
-});	
 	/*$('#clinic_approve').attr("value", $('#clinic_other_approve').attr("value");
 	$('#clinic_update_status').attr("value", $('#clinic_other_update_status').attr("value");
 	$('#clinic_other_comment').attr("value", $('#clinic_other_other_comment').attr("value");

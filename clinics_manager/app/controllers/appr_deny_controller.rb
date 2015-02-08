@@ -1,6 +1,6 @@
 class ApprDenyController < ApplicationController
   def approve
-    @par = params[:clinic] 
+    @par = prams[:clinic] 
   end
 
   # def form_params
