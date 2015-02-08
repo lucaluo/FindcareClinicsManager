@@ -428,9 +428,9 @@
             console.log("submit");
             $('.other').each(function (){
                 var $this = $(this);
-                console.log("value: " + $this.attr("value"));
+                console.log("value: " + $this.val());
                 console.log("prev_value: " + $this.prev().attr("value"));
-                $this.prev().attr("value", $this.attr("value"));
+                $this.prev().attr("value", $this.val());
             });
         }); 
     });
