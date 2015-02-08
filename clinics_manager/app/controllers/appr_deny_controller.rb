@@ -20,6 +20,11 @@ class ApprDenyController < ApplicationController
         ci.save
       end
     end
+
+    @hours = params[:hour]
+    @hours.each do |type, value|
+      @clinic_hour = Hours.find()
+    end
   end
 
 
