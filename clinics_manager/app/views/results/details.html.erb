@@ -413,8 +413,12 @@
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
         <input type='text' class="other" value=""><br><br>
-      <% end %>
-    <% end %>
+        
+      <% end %><br>
+    <% end %><br>
+    
+    SERVICE:<br><br>
+    
     
     <%= f.submit "Submit" %>
   <% end %>
@@ -423,7 +427,6 @@
   <script>
     $(function(){
         console.log("ready");
-        var button = 
         $('#clinic_submit').on('click', function(){
             console.log("submit");
             $('.other').each(function (){
