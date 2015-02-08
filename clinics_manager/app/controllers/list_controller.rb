@@ -8,23 +8,26 @@ class ListController < ApplicationController
 
   	#select from the table ClinicInsert all the clinics that added
   	#@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
-    clinic_insert = ClinicInsert.all
+    clinic_insert = ClinicInsert.where('approve' => 'N')
 
-    @h = createHash(clinic_insert).sort_by { |key, value| key || 0 }
-
-    #render "list/listAll"
+    @h = createHash(clinic_insert)
+    @title = 'List New Clinics'
+    render "list/list"
   end
 
   def listAll
-  	clinic_insert = ClinicInsert.order(:clinic_id)
+  	clinic_insert = ClinicInsert.all
 
     @h = createHash(clinic_insert)
+    @title = 'List All Clinics'
+    render "list/list"
   end
 
   def listApproved
-  	clinic_insert = ClinicInsert.where('approve' => :Y).order(:clinic_id)
-
+  	clinic_insert = ClinicInsert.where('approve' => :Y)
     @h = createHash(clinic_insert)
+    @title = 'List Approved Clinics'
+    render "list/list"
   end
 
   def createHash(item_list)
@@ -34,7 +37,7 @@ class ListController < ApplicationController
     item_list.each do |item|
       h[item[:clinic_id]] << item
     end
-    return h
+    return h.sort_by { |key, value| key || 0 }
   end
 
 end

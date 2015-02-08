@@ -4,20 +4,38 @@
 	<title></title>
 
 <style type="text/css">
-/*.content:hover{
-	background: #42B4E6;
-}*/
 .hidden_link {
 	text-decoration: none;
 	color: black;
 }
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+
+}
+
+th, td{
+	padding-right: 1em;
+	padding-left: 1em;
+}
+
+nav{
+	float: right;
+}
 </style>
+
 </head>
 <body>
-	
-	<h1>Listing New Clinics</h1>
+	<nav>
+		<a href="/list/all">show all requests</a> |
+	  <a href="/list/new">show new requests</a> |
+	  <a href="/list/approved">show approved requests</a>
+	</nav>
+	<h1><%= @title %></h1>
 	<table>
 		<tr>
+			<th>Transaction ID</th>
 			<th>Clinic ID</th>
 			<th>Clinic Name</th>
 			<th>Clinic Status</th>
@@ -25,9 +43,10 @@
 		</tr>
 
 		<% @h.each do |key, item| %>
-			<tbody style="cursor: pointer;"  >
+			<tbody style="cursor: pointer">
 			<% item.each do |record| %>
 				<tr class="content" name="clinic<%= record.clinic_id %>">
+					<td><%= record.transc_id %></td>
 					<td><a href="/results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
 					<td><%= record.clinic_name %></td>
 					<td><%= record.update_status %></td>
@@ -41,11 +60,15 @@
 	<script type="text/javascript">
 		$('.content').click( function() {
 		    window.location = $(this).find('a').attr('href');
-		}).hover( function(){
-			console.log("mouseover!");
+		}).hover( function() {
 			var myName = $(this).attr('name');
-			$("[name='"+myName+"']").css("background-color", "#42B4E6");
-		}).on('mouseleave', function(){
+			if(myName != "clinic"){
+				$("[name='"+myName+"']").css("background-color", "#42B4E6");
+			}
+			else{
+				$(this).css("background-color", "#42B4E6");
+			}
+		}).on('mouseleave', function() {
 			var myName = $(this).attr('name');
 			$("[name='"+myName+"']").css("background-color", "white");
 		});
