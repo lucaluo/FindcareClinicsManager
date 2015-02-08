@@ -1,8 +1,5 @@
 ClinicsManager::Application.routes.draw do
-  match 'list/new' => 'list#listNew'
-  match 'list/all' => 'list#listAll'
-  match 'list' => 'list#listAll'
-  match 'list/approved' => 'list#listApproved'
+  get "list/listNew"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -53,7 +50,7 @@ ClinicsManager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "list#listAll"
+  # root :to => "welcome#index"
 
   # See how all your routes lay out with "rake routes"
 
