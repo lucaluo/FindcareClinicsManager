@@ -611,7 +611,13 @@
     <% end %>
     
     <%= f.submit "Submit" %>
+    
   <% end %>
+  <form accept-charset="UTF-8" action="/appr_deny/deny" method="post">
+    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+    <input type="hidden" name="transc_id" value="<%= @transc_id %>">
+    <input name="commit" type="submit" value="Deny">
+  </form>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>
