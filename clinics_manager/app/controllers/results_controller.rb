@@ -23,7 +23,6 @@ class ResultsController < ApplicationController
 		all_hour_type = Hours.select('hour_type').uniq
 		all_hour_type.each do |hour_type|
 			@clinic_insert_hour[hour_type.hour_type] = Array.new
-			@origin_hour[hour_type.hour_type] = Array.new
 		end
 
 		@transc_id = params[:transc_id]
@@ -36,7 +35,7 @@ class ResultsController < ApplicationController
 
 			origin_hour_single = Hours.where(:clinic_id => clinic_id)
 			origin_hour_single.each do |origin_hour|
-				@origin_hour[origin_hour.hour_type].push(origin_hour)
+				@origin_hour[origin_hour.hour_type] = origin_hour
 			end
 		else
 			@origin_clinic = nil
