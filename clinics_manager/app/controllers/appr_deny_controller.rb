@@ -1,6 +1,6 @@
 class ApprDenyController < ApplicationController
   def approve
-    @form_params = params[:clinic]
+    @form_params = paras[:clinic]
     @clinic_insert = ClinicInsert.find(params[:transc_id])
     if @clinic_insert.update_status == "UPDATE"
       @clinic = Clinic.find(@clinic_insert[:clinic_id])

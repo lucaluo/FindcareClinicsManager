@@ -17,18 +17,34 @@ class ResultsController < ApplicationController
 		end
 =end
 
-		@transc_id = params[:transc_id]
-		single_insert = ClinicInsert.find(@transc_id)
-		@clinic_id = single_insert.clinic_id
-		all_insert = ClinicInsert.where(:clinic_id => @clinic_id)
-		@clinic = Clinic.find(@clinic_id)
-
 		@clinic_insert = Array.new
 		@clinic_insert_hour = Hash.new
+		@origin_hour = Hash.new
 		all_hour_type = Hours.select('hour_type').uniq
 		all_hour_type.each do |hour_type|
 			@clinic_insert_hour[hour_type.hour_type] = Array.new
+			@origin_hour[hour_type.hour_type] = Array.new
 		end
+
+		@transc_id = params[:transc_id]
+		single_insert = ClinicInsert.find(@transc_id)
+		clinic_id = single_insert.clinic_id
+		if clinic_id != nil
+			@origin_clinic = Clinic.find(clinic_id)
+			@clinic = Clinic.find(clinic_id)
+			@origin_service = ClinicService.select('service_abbr').where(:clinic_id => clinic_id)
+
+			origin_hour_single = Hours.where(:clinic_id => clinic_id)
+			origin_hour_single.each do |origin_hour|
+				@origin_hour[origin_hour.hour_type].push(origin_hour)
+			end
+		else
+			@origin_clinic = nil
+			@clinic = nil
+		end
+		all_insert = ClinicInsert.where(:clinic_id => clinic_id) 
+
+
 
 		@clinic_insert_service = Hash.new
 		@clinic_insert_service['ADD'] = Array.new
