@@ -7,7 +7,11 @@
 <body>
   <%= form_for @clinic, :url => {:action => "approve", :controller => "appr_deny"}, :html => {:class => ""} do |f| %>
     <input type="hidden" name="transc_id" value="<%= @transc_id %>">
+    
     clinic_name:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :clinic_name, @origin_clinic.clinic_name %><%= @origin_name.clinic_name %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
       <%= f.radio_button :clinic_name, v.clinic_name %><%= v.clinic_name %><br>
     <% end %>
@@ -16,6 +20,9 @@
     <br><br>
 
     alternative_name:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :alternative_name, @origin_clinic.alternative_name %><%= @origin_name.alternative_name %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
       <%= f.radio_button :alternative_name, v.alternative_name %><%= v.alternative_name %><br>
     <% end %>
@@ -24,6 +31,9 @@
     <br><br>
 
     lat:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :lat, @origin_clinic.lat %><%= @origin_name.lat %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
       <%= f.radio_button :lat, v.lat %><%= v.lat %><br>
     <% end %>
@@ -32,6 +42,9 @@
     <br><br>
 
     lng:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :lng, @origin_clinic.lng %><%= @origin_name.lng %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :lng, v.lng %><%= v.lng %><br>
     <% end %>
@@ -40,6 +53,9 @@
     <br><br>
     
     primary_source:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :primary_source, @origin_clinic.primary_source %><%= @origin_name.primary_source %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :primary_source, v.primary_source %><%= v.primary_source %><br>
     <% end %>
@@ -48,6 +64,9 @@
     <br><br>
     
     street_addr1:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :street_addr1, @origin_clinic.street_addr1 %><%= @origin_name.street_addr1 %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :street_addr1, v.street_addr1 %><%= v.street_addr1 %><br>
     <% end %>
@@ -56,6 +75,9 @@
     <br><br>
     
     street_addr2:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :street_addr2, @origin_clinic.street_addr2 %><%= @origin_name.street_addr2 %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :street_addr2, v.street_addr2 %><%= v.street_addr2 %><br>
     <% end %>
@@ -64,6 +86,9 @@
     <br><br>
     
     city:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :city, @origin_clinic.city %><%= @origin_name.city %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :city, v.city %><%= v.city %><br>
     <% end %>
@@ -72,6 +97,9 @@
     <br><br>
     
     state:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :state, @origin_clinic.state %><%= @origin_name.state %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :state, v.state %><%= v.state %><br>
     <% end %>
@@ -80,6 +108,9 @@
     <br><br>
     
     zipcode:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :zipcode, @origin_clinic.zipcode %><%= @origin_name.zipcode %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :zipcode, v.zipcode %><%= v.zipcode %><br>
     <% end %>
@@ -88,6 +119,9 @@
     <br><br>
     
     primary_phone:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :primary_phone, @origin_clinic.primary_phone %><%= @origin_name.primary_phone %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :primary_phone, v.primary_phone %><%= v.primary_phone %><br>
     <% end %>
@@ -96,6 +130,9 @@
     <br><br>
     
     appointment_phone:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :appointment_phone, @origin_clinic.appointment_phone %><%= @origin_name.appointment_phone %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :appointment_phone, v.appointment_phone %><%= v.appointment_phone %><br>
     <% end %>
@@ -105,6 +142,9 @@
     
     
     donation_phone:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :donation_phone, @origin_clinic.donation_phone %><%= @origin_name.donation_phone %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :donation_phone, v.donation_phone %><%= v.donation_phone %><br>
     <% end %>
@@ -113,6 +153,9 @@
     <br><br>
     
     phone_comments:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :phone_comments, @origin_clinic.phone_comments %><%= @origin_name.phone_comments %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :phone_comments, v.phone_comments %><%= v.phone_comments %><br>
     <% end %>
@@ -121,6 +164,9 @@
     <br><br>
     
     fax:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :fax, @origin_clinic.fax %><%= @origin_name.fax %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :fax, v.fax %><%= v.fax %><br>
     <% end %>
@@ -129,6 +175,9 @@
     <br><br>
     
     clinic_type:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :clinic_type, @origin_clinic.clinic_type %><%= @origin_name.clinic_type %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :clinic_type, v.clinic_type %><%= v.clinic_type %><br>
     <% end %>
@@ -137,6 +186,9 @@
     <br><br>
     
     website:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :website, @origin_clinic.website %><%= @origin_name.website %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :website, v.website %><%= v.website %><br>
     <% end %>
@@ -145,6 +197,9 @@
     <br><br>
     
     primary_contact:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :primary_contact, @origin_clinic.primary_contact %><%= @origin_name.primary_contact %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :primary_contact, v.primary_contact %><%= v.primary_contact %><br>
     <% end %>
@@ -153,6 +208,9 @@
     <br><br>
     
     primary_email:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :primary_email, @origin_clinic.primary_email %><%= @origin_name.primary_email %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :primary_email, v.primary_email %><%= v.primary_email %><br>
     <% end %>
@@ -161,6 +219,9 @@
     <br><br>
     
     other_email:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :other_email, @origin_clinic.other_email %><%= @origin_name.other_email %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :other_email, v.other_email %><%= v.other_email %><br>
     <% end %>
@@ -169,6 +230,9 @@
     <br><br>
     
     fqhc:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :fqhc, @origin_clinic.fqhc %><%= @origin_name.fqhc %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :fqhc, v.fqhc %><%= v.fqhc %><br>
     <% end %>
@@ -177,6 +241,9 @@
     <br><br>
     
     other_languages:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :other_languages, @origin_clinic.other_languages %><%= @origin_name.other_languages %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :other_languages, v.other_languages %><%= v.other_languages %><br>
     <% end %>
@@ -185,6 +252,9 @@
     <br><br>
     
     pat_population_served:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :pat_population_served, @origin_clinic.pat_population_served %><%= @origin_name.pat_population_served %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :pat_population_served, v.pat_population_served %><%= v.pat_population_served %><br>
     <% end %>
@@ -193,6 +263,9 @@
     <br><br>
     
     area_served:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :area_served, @origin_clinic.area_served %><%= @origin_name.area_served %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :area_served, v.area_served %><%= v.area_served %><br>
     <% end %>
@@ -201,6 +274,9 @@
     <br><br>
     
     comments:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :comments, @origin_clinic.comments %><%= @origin_name.comments %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :comments, v.comments %><%= v.comments %><br>
     <% end %>
@@ -209,6 +285,9 @@
     <br><br>
     
     other_service:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :other_service, @origin_clinic.other_service %><%= @origin_name.other_service %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :other_service, v.other_service %><%= v.other_service %><br>
     <% end %>
@@ -217,6 +296,9 @@
     <br><br>
     
     low_cost_amount:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :low_cost_amount, @origin_clinic.low_cost_amount %><%= @origin_name.low_cost_amount %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :low_cost_amount, v.low_cost_amount %><%= v.low_cost_amount %><br>
     <% end %>
@@ -225,6 +307,9 @@
     <br><br>
     
     sliding_scale_low:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :sliding_scale_low, @origin_clinic.sliding_scale_low %><%= @origin_name.sliding_scale_low %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :sliding_scale_low, v.sliding_scale_low %><%= v.sliding_scale_low %><br>
     <% end %>
@@ -233,6 +318,9 @@
     <br><br>
     
     sliding_scale_high:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :sliding_scale_high, @origin_clinic.sliding_scale_high %><%= @origin_name.sliding_scale_high %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :sliding_scale_high, v.sliding_scale_high %><%= v.sliding_scale_high %><br>
     <% end %>
@@ -241,6 +329,9 @@
     <br><br>
     
     no_cost:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :no_cost, @origin_clinic.no_cost %><%= @origin_name.no_cost %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :no_cost, v.no_cost %><%= v.no_cost %><br>
     <% end %>
@@ -249,6 +340,9 @@
     <br><br>
     
     low_cost:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :low_cost, @origin_clinic.low_cost %><%= @origin_name.low_cost %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :low_cost, v.low_cost %><%= v.low_cost %><br>
     <% end %>
@@ -257,6 +351,9 @@
     <br><br>
     
     sliding_scale:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :sliding_scale, @origin_clinic.sliding_scale %><%= @origin_name.sliding_scale %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :sliding_scale, v.sliding_scale %><%= v.sliding_scale %><br>
     <% end %>
@@ -265,6 +362,9 @@
     <br><br>
     
     uninsured_only:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :uninsured_only, @origin_clinic.uninsured_only %><%= @origin_name.uninsured_only %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :uninsured_only, v.uninsured_only %><%= v.uninsured_only %><br>
     <% end %>
@@ -273,6 +373,9 @@
     <br><br>
     
     medicare:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :medicare, @origin_clinic.medicare %><%= @origin_name.medicare %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :medicare, v.medicare %><%= v.medicare %><br>
     <% end %>
@@ -281,6 +384,9 @@
     <br><br>
     
     medicaid:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :medicaid, @origin_clinic.medicaid %><%= @origin_name.medicaid %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :medicaid, v.medicaid %><%= v.medicaid %><br>
     <% end %>
@@ -289,6 +395,9 @@
     <br><br>
     
     CHIP:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :CHIP, @origin_clinic.CHIP %><%= @origin_name.CHIP %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :CHIP, v.CHIP %><%= v.CHIP %><br>
     <% end %>
@@ -297,6 +406,9 @@
     <br><br>
     
     private:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :private, @origin_clinic.private %><%= @origin_name.private %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :private, v.private %><%= v.private %><br>
     <% end %>
@@ -305,6 +417,9 @@
     <br><br>
     
     payment_call_clinic:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :payment_call_clinic, @origin_clinic.payment_call_clinic %><%= @origin_name.payment_call_clinic %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :payment_call_clinic, v.payment_call_clinic %><%= v.payment_call_clinic %><br>
     <% end %>
@@ -313,6 +428,9 @@
     <br><br>
     
     payment_comments:<br>
+    <% if not @origin_clinic.nil? %>
+      <%= f.radio_button :payment_comments, @origin_clinic.payment_comments %><%= @origin_name.payment_comments %>(origin)<br>
+    <% end %>
     <% @clinic_insert.each do |v| %>
     <%= f.radio_button :payment_comments, v.payment_comments %><%= v.payment_comments %><br>
     <% end %>
@@ -326,6 +444,9 @@
         <%= type %><br><br>
         
         hours_call_clinic:<br>
+        <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= origin_hour[type].hours_call_clinic %>">
+        <%= origin_hour[type].hours_call_clinic %>(origin)<br>
+        
         <% array.each do |hour| %>
           <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= hour.hours_call_clinic %>">
           <%= hour.hours_call_clinic %><br>
@@ -335,6 +456,9 @@
       
        
         mon:<br>
+        <input type="radio" name="hour[<%= type %>][mon]" value="<%= origin_hour[type].mon %>">
+        <%= origin_hour[type].mon %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][mon]" value="<%= hour.mon %>">
          <%= hour.mon %><br>
@@ -343,6 +467,9 @@
         <input type='text' class="other" value=""><br><br>
        
         tue:<br>
+        <input type="radio" name="hour[<%= type %>][tue]" value="<%= origin_hour[type].tue %>">
+        <%= origin_hour[type].tue %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][tue]" value="<%= hour.tue %>">
          <%= hour.tue %><br>
@@ -351,6 +478,9 @@
         <input type='text' class="other" value=""><br><br>
 
         wed:<br>
+        <input type="radio" name="hour[<%= type %>][wed]" value="<%= origin_hour[type].wed %>">
+        <%= origin_hour[type].wed %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][wed]" value="<%= hour.wed %>">
          <%= hour.wed %><br>
@@ -359,6 +489,9 @@
         <input type='text' class="other" value=""><br><br>
 
         thr:<br>
+        <input type="radio" name="hour[<%= type %>][thr]" value="<%= origin_hour[type].thr %>">
+        <%= origin_hour[type].thr %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][thr]" value="<%= hour.thr %>">
          <%= hour.thr %><br>
@@ -367,6 +500,9 @@
         <input type='text' class="other" value=""><br><br>
 
         fri:<br>
+        <input type="radio" name="hour[<%= type %>][fri]" value="<%= origin_hour[type].fri %>">
+        <%= origin_hour[type].fri %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][fri]" value="<%= hour.fri %>">
          <%= hour.fri %><br>
@@ -375,6 +511,9 @@
         <input type='text' class="other" value=""><br><br>
         
         sat:<br>
+        <input type="radio" name="hour[<%= type %>][sat]" value="<%= origin_hour[type].sat %>">
+        <%= origin_hour[type].sat %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][sat]" value="<%= hour.sat %>">
          <%= hour.sat %><br>
@@ -383,6 +522,9 @@
         <input type='text' class="other" value=""><br><br>
         
         sun:<br>
+        <input type="radio" name="hour[<%= type %>][sun]" value="<%= origin_hour[type].sun %>">
+        <%= origin_hour[type].sun %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][sun]" value="<%= hour.sun %>">
          <%= hour.sun %><br>
@@ -391,6 +533,9 @@
         <input type='text' class="other" value=""><br><br>
         
         appointment_only:<br>
+        <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= origin_hour[type].appointment_only %>">
+        <%= origin_hour[type].appointment_only %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>">
          <%= hour.appointment_only %><br>
@@ -399,6 +544,9 @@
         <input type='text' class="other" value=""><br><br>
         
         comment:<br>
+        <input type="radio" name="hour[<%= type %>][comment]" value="<%= origin_hour[type].comment %>">
+        <%= origin_hour[type].comment %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>">
          <%= hour.comment %><br>
@@ -407,6 +555,9 @@
         <input type='text' class="other" value=""><br><br>
         
         walkin_only:<br>
+        <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= origin_hour[type].walkin_only %>">
+        <%= origin_hour[type].walkin_only %>(origin)<br>
+        
         <% array.each do |hour| %>
          <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= hour.walkin_only %>">
          <%= hour.walkin_only %><br>
@@ -418,7 +569,24 @@
     <% end %><br>
     
     SERVICE:<br><br>
+    <% if not @clinic_insert_service['ADD'] %>
+      add:<br>
+      <% @clinic_insert_service['ADD'].each do |is| %>
+        <input type="checkbox" name="service_add[<%= is.service_abbr %>]"><%= is.service_abbr %><br>
+      <% end %>
+    <% end %><br>
     
+    <% if not @clinic_insert_service['DELETE'] %>
+      delete:<br>
+      <% @clinic_insert_service['DELETE'].each do |is| %>
+        <input type="checkbox" name="service_delete[<%= is.service_abbr %>]"><%= is.service_abbr %><br>
+      <% end %>
+    <% end %>
+    
+    origin:<br>
+    <% @clinic.service.each do |is| %>
+      <=% is.service_abbr %>
+    <% end %>
     
     <%= f.submit "Submit" %>
   <% end %>
