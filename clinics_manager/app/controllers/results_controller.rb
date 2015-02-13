@@ -4,22 +4,8 @@ class ResultsController < ApplicationController
 	end
 
 	def details
-		#when add = 'true', new clinic. when add = 'false', update clinic
-=begin
-		if params[:add] == 'true'
-			@transc_id = params[:transc_id]
-			all_insert = ClinicInsert.find(@transc_id) 
-			@clinic = Clinic.new
-		else 
-			@clinic_id = params[:clinic_id]
-			all_insert = ClinicInsert.where(clinic_id: @clinic_id)
-			@clinic = Clinic.find(@clinic_id)	
-		end
-=end
-
 		@clinic_insert = Array.new
 		@clinic_insert_hour = Hash.new
-		@origin_hour = Hash.new
 		all_hour_type = Hours.select('hour_type').uniq
 		all_hour_type.each do |hour_type|
 			@clinic_insert_hour[hour_type.hour_type] = Array.new
@@ -29,6 +15,7 @@ class ResultsController < ApplicationController
 		single_insert = ClinicInsert.find(@transc_id)
 		clinic_id = single_insert.clinic_id
 		if clinic_id != nil
+			@origin_hour = Hash.new
 			@origin_clinic = Clinic.find(clinic_id)
 			@clinic = Clinic.find(clinic_id)
 			@origin_service = ClinicService.select('service_abbr').where(:clinic_id => clinic_id)
@@ -38,6 +25,7 @@ class ResultsController < ApplicationController
 				@origin_hour[origin_hour.hour_type] = origin_hour
 			end
 		else
+			@origin_hour = nil
 			@origin_clinic = nil
 			@clinic = nil
 		end
