@@ -39,7 +39,8 @@ class ResultsController < ApplicationController
 			end
 		else
 			@origin_clinic = nil
-			@clinic = nil
+			@clinic = Clinic.new
+			@origin_hour = nil
 		end
 		all_insert = ClinicInsert.where(:clinic_id => clinic_id) 
 
