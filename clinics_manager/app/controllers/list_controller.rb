@@ -1,13 +1,6 @@
-class ListController < ApplicationController
-  def listNew
-  	#clinic_update_id = ClinicInsert.select('clinic_id').where('approve' => :N).where('update_status' => :UPDATE).map(&:'clinic_id').uniq
-  	#@clinic_update = Clinic.where('clinic_id' => clinic_update_id)
-  	
-	  #clinic_delete_id = ClinicInsert.select('clinic_id').where('update_status' => :DELETE).where('approve' => 'N').map(&:'clinic_id').uniq
-  	#@clinic_delete = Clinic.where('clinic_id' => clinic_delete_id)
+class ListController < SecuredController
 
-  	#select from the table ClinicInsert all the clinics that added
-  	#@add_clinic_inserts = ClinicInsert.where('update_status' => :ADD).where('approve' => 'N')
+  def listNew
     clinic_insert = ClinicInsert.where('approve' => 'N')
 
     @h = createHash(clinic_insert)
