@@ -563,10 +563,10 @@
          <%= hour.walkin_only %><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
-        <input type='text' class="other" value=""><br><br>
+        <input type='text' class="other" value=""><br>
         
-      <% end %><br>
-    <% end %><br>
+      <% end %>
+    <% end %>
     
     SERVICE:<br><br>
     <% if not @clinic_insert_service['ADD'] %>
@@ -585,7 +585,7 @@
     
     origin:<br>
     <% @clinic.service.each do |is| %>
-      <=% is.service_abbr %>
+      <%= is.service_abbr %><br>
     <% end %>
     
     <%= f.submit "Submit" %>
