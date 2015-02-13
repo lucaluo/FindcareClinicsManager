@@ -6,6 +6,7 @@ ClinicsManager::Application.routes.draw do
   match 'results' => 'results#details'
   match 'results/get_attribute' => 'results#get_attribute'
   match 'appr_deny/approve' => 'appr_deny#approve'
+  match 'appr_deny/deny' => 'appr_deny#deny'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -13,7 +13,7 @@
       <%= f.radio_button :clinic_name, @origin_clinic.clinic_name %><%= @origin_clinic.clinic_name %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :clinic_name, v.clinic_name %><%= v.clinic_name %><br>
+      <%= f.radio_button :clinic_name, v.clinic_name %><span><%= v.clinic_name %></span><br>
     <% end %>
     <%= f.radio_button :clinic_name, "" %>
     <input id='other_clinic_name' type='text' class="other" value="">
@@ -24,7 +24,7 @@
       <%= f.radio_button :alternative_name, @origin_clinic.alternative_name %><%= @origin_clinic.alternative_name %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :alternative_name, v.alternative_name %><%= v.alternative_name %><br>
+      <%= f.radio_button :alternative_name, v.alternative_name %><span><%= v.alternative_name %></span><br>
     <% end %>
     <%= f.radio_button :alternative_name, "" %>
     <input id='other_alternative_name' type='text' class="other" value="">
@@ -35,7 +35,7 @@
       <%= f.radio_button :lat, @origin_clinic.lat %><%= @origin_clinic.lat %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :lat, v.lat %><%= v.lat %><br>
+      <%= f.radio_button :lat, v.lat %><span><%= v.lat %></span><br>
     <% end %>
     <%= f.radio_button :lat, "" %>
     <input id='other_lat' type='text' class="other" value="">
@@ -46,7 +46,7 @@
       <%= f.radio_button :lng, @origin_clinic.lng %><%= @origin_clinic.lng %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :lng, v.lng %><%= v.lng %><br>
+    <%= f.radio_button :lng, v.lng %><span><%= v.lng %></span><br>
     <% end %>
     <%= f.radio_button :lng, "" %>
     <input id='other_lng' type='text' class="other" value="">
@@ -57,7 +57,7 @@
       <%= f.radio_button :primary_source, @origin_clinic.primary_source %><%= @origin_clinic.primary_source %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_source, v.primary_source %><%= v.primary_source %><br>
+    <%= f.radio_button :primary_source, v.primary_source %><span><%= v.primary_source %></span><br>
     <% end %>
     <%= f.radio_button :primary_source, "" %>
     <input id='other_primary_source' type='text' class="other" value="">
@@ -68,7 +68,7 @@
       <%= f.radio_button :street_addr1, @origin_clinic.street_addr1 %><%= @origin_clinic.street_addr1 %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :street_addr1, v.street_addr1 %><%= v.street_addr1 %><br>
+    <%= f.radio_button :street_addr1, v.street_addr1 %><span><%= v.street_addr1 %></span><br>
     <% end %>
     <%= f.radio_button :street_addr1, "" %>
     <input id='other_street_addr1' type='text' class="other" value="">
@@ -79,7 +79,7 @@
       <%= f.radio_button :street_addr2, @origin_clinic.street_addr2 %><%= @origin_clinic.street_addr2 %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :street_addr2, v.street_addr2 %><%= v.street_addr2 %><br>
+    <%= f.radio_button :street_addr2, v.street_addr2 %><span><%= v.street_addr2 %></span><br>
     <% end %>
     <%= f.radio_button :street_addr2, "" %>
     <input id='other_street_addr2' type='text' class="other" value="">
@@ -90,7 +90,7 @@
       <%= f.radio_button :city, @origin_clinic.city %><%= @origin_clinic.city %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :city, v.city %><%= v.city %><br>
+    <%= f.radio_button :city, v.city %><span><%= v.city %></span><br>
     <% end %>
     <%= f.radio_button :city, "" %>
     <input id='other_city' type='text' class="other" value="">
@@ -101,7 +101,7 @@
       <%= f.radio_button :state, @origin_clinic.state %><%= @origin_clinic.state %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :state, v.state %><%= v.state %><br>
+    <%= f.radio_button :state, v.state %><span><%= v.state %></span><br>
     <% end %>
     <%= f.radio_button :state, "" %>
     <input id='other_state' type='text' class="other" value="">
@@ -112,7 +112,7 @@
       <%= f.radio_button :zipcode, @origin_clinic.zipcode %><%= @origin_clinic.zipcode %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :zipcode, v.zipcode %><%= v.zipcode %><br>
+    <%= f.radio_button :zipcode, v.zipcode %><span><%= v.zipcode %></span><br>
     <% end %>
     <%= f.radio_button :zipcode, "" %>
     <input id='other_zipcode' type='text' class="other" value="">
@@ -123,7 +123,7 @@
       <%= f.radio_button :primary_phone, @origin_clinic.primary_phone %><%= @origin_clinic.primary_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_phone, v.primary_phone %><%= v.primary_phone %><br>
+    <%= f.radio_button :primary_phone, v.primary_phone %><span><%= v.primary_phone %></span><br>
     <% end %>
     <%= f.radio_button :primary_phone, "" %>
     <input id='other_primary_phone' type='text' class="other" value="">
@@ -134,7 +134,7 @@
       <%= f.radio_button :appointment_phone, @origin_clinic.appointment_phone %><%= @origin_clinic.appointment_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :appointment_phone, v.appointment_phone %><%= v.appointment_phone %><br>
+    <%= f.radio_button :appointment_phone, v.appointment_phone %><span><%= v.appointment_phone %></span><br>
     <% end %>
     <%= f.radio_button :appointment_phone, "" %>
     <input id='other_appointment_phone' type='text' class="other" value="">
@@ -146,7 +146,7 @@
       <%= f.radio_button :donation_phone, @origin_clinic.donation_phone %><%= @origin_clinic.donation_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :donation_phone, v.donation_phone %><%= v.donation_phone %><br>
+    <%= f.radio_button :donation_phone, v.donation_phone %><span><%= v.donation_phone %></span><br>
     <% end %>
     <%= f.radio_button :donation_phone, "" %>
     <input id='other_donation_phone' type='text' class="other" value="">
@@ -157,7 +157,7 @@
       <%= f.radio_button :phone_comments, @origin_clinic.phone_comments %><%= @origin_clinic.phone_comments %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :phone_comments, v.phone_comments %><%= v.phone_comments %><br>
+    <%= f.radio_button :phone_comments, v.phone_comments %><span><%= v.phone_comments %></span><br>
     <% end %>
     <%= f.radio_button :phone_comments, "" %>
     <input id='other_phone_comments' type='text' class="other" value="">
@@ -168,7 +168,7 @@
       <%= f.radio_button :fax, @origin_clinic.fax %><%= @origin_clinic.fax %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :fax, v.fax %><%= v.fax %><br>
+    <%= f.radio_button :fax, v.fax %><span><%= v.fax %></span><br>
     <% end %>
     <%= f.radio_button :fax, "" %>
     <input id='other_fax' type='text' class="other" value="">
@@ -179,7 +179,7 @@
       <%= f.radio_button :clinic_type, @origin_clinic.clinic_type %><%= @origin_clinic.clinic_type %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :clinic_type, v.clinic_type %><%= v.clinic_type %><br>
+    <%= f.radio_button :clinic_type, v.clinic_type %><span><%= v.clinic_type %></span><br>
     <% end %>
     <%= f.radio_button :clinic_type, "" %>
     <input id='other_clinic_type' type='text' class="other" value="">
@@ -190,7 +190,7 @@
       <%= f.radio_button :website, @origin_clinic.website %><%= @origin_clinic.website %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :website, v.website %><%= v.website %><br>
+    <%= f.radio_button :website, v.website %><span><%= v.website %></span><br>
     <% end %>
     <%= f.radio_button :website, "" %>
     <input id='other_website' type='text' class="other" value="">
@@ -201,7 +201,7 @@
       <%= f.radio_button :primary_contact, @origin_clinic.primary_contact %><%= @origin_clinic.primary_contact %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_contact, v.primary_contact %><%= v.primary_contact %><br>
+    <%= f.radio_button :primary_contact, v.primary_contact %><span><%= v.primary_contact %></span><br>
     <% end %>
     <%= f.radio_button :primary_contact, "" %>
     <input id='other_primary_contact' type='text' class="other" value="">
@@ -212,7 +212,7 @@
       <%= f.radio_button :primary_email, @origin_clinic.primary_email %><%= @origin_clinic.primary_email %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_email, v.primary_email %><%= v.primary_email %><br>
+    <%= f.radio_button :primary_email, v.primary_email %><span><%= v.primary_email %></span><br>
     <% end %>
     <%= f.radio_button :primary_email, "" %>
     <input id='other_primary_email' type='text' class="other" value="">
@@ -223,7 +223,7 @@
       <%= f.radio_button :other_email, @origin_clinic.other_email %><%= @origin_clinic.other_email %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_email, v.other_email %><%= v.other_email %><br>
+    <%= f.radio_button :other_email, v.other_email %><span><%= v.other_email %></span><br>
     <% end %>
     <%= f.radio_button :other_email, "" %>
     <input id='other_other_email' type='text' class="other" value="">
@@ -234,7 +234,7 @@
       <%= f.radio_button :fqhc, @origin_clinic.fqhc %><%= @origin_clinic.fqhc %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :fqhc, v.fqhc %><%= v.fqhc %><br>
+    <%= f.radio_button :fqhc, v.fqhc %><span><%= v.fqhc %></span><br>
     <% end %>
     <%= f.radio_button :fqhc, "" %>
     <input id='other_fqhc' type='text' class="other" value="">
@@ -245,7 +245,7 @@
       <%= f.radio_button :other_languages, @origin_clinic.other_languages %><%= @origin_clinic.other_languages %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_languages, v.other_languages %><%= v.other_languages %><br>
+    <%= f.radio_button :other_languages, v.other_languages %><span><%= v.other_languages %></span><br>
     <% end %>
     <%= f.radio_button :other_languages, "" %>
     <input id='other_other_languages' type='text' class="other" value="">
@@ -256,7 +256,7 @@
       <%= f.radio_button :pat_population_served, @origin_clinic.pat_population_served %><%= @origin_clinic.pat_population_served %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :pat_population_served, v.pat_population_served %><%= v.pat_population_served %><br>
+    <%= f.radio_button :pat_population_served, v.pat_population_served %><span><%= v.pat_population_served %></span><br>
     <% end %>
     <%= f.radio_button :pat_population_served, "" %>
     <input id='other_pat_population_served' type='text' class="other" value="">
@@ -267,7 +267,7 @@
       <%= f.radio_button :area_served, @origin_clinic.area_served %><%= @origin_clinic.area_served %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :area_served, v.area_served %><%= v.area_served %><br>
+    <%= f.radio_button :area_served, v.area_served %><span><%= v.area_served %></span><br>
     <% end %>
     <%= f.radio_button :area_served, "" %>
     <input id='other_area_served' type='text' class="other" value="">
@@ -278,7 +278,7 @@
       <%= f.radio_button :comments, @origin_clinic.comments %><%= @origin_clinic.comments %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :comments, v.comments %><%= v.comments %><br>
+    <%= f.radio_button :comments, v.comments %><span><%= v.comments %></span><br>
     <% end %>
     <%= f.radio_button :comments, "" %>
     <input id='other_comments' type='text' class="other" value="">
@@ -289,7 +289,7 @@
       <%= f.radio_button :other_service, @origin_clinic.other_service %><%= @origin_clinic.other_service %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_service, v.other_service %><%= v.other_service %><br>
+    <%= f.radio_button :other_service, v.other_service %><span><%= v.other_service %></span><br>
     <% end %>
     <%= f.radio_button :other_service, "" %>
     <input id='other_other_service' type='text' class="other" value="">
@@ -300,7 +300,7 @@
       <%= f.radio_button :low_cost_amount, @origin_clinic.low_cost_amount %><%= @origin_clinic.low_cost_amount %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :low_cost_amount, v.low_cost_amount %><%= v.low_cost_amount %><br>
+    <%= f.radio_button :low_cost_amount, v.low_cost_amount %><span><%= v.low_cost_amount %></span><br>
     <% end %>
     <%= f.radio_button :low_cost_amount, "" %>
     <input id='other_low_cost_amount' type='text' class="other" value="">
@@ -311,7 +311,7 @@
       <%= f.radio_button :sliding_scale_low, @origin_clinic.sliding_scale_low %><%= @origin_clinic.sliding_scale_low %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale_low, v.sliding_scale_low %><%= v.sliding_scale_low %><br>
+    <%= f.radio_button :sliding_scale_low, v.sliding_scale_low %><span><%= v.sliding_scale_low %></span><br>
     <% end %>
     <%= f.radio_button :sliding_scale_low, "" %>
     <input id='other_sliding_scale_low' type='text' class="other" value="">
@@ -322,7 +322,7 @@
       <%= f.radio_button :sliding_scale_high, @origin_clinic.sliding_scale_high %><%= @origin_clinic.sliding_scale_high %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale_high, v.sliding_scale_high %><%= v.sliding_scale_high %><br>
+    <%= f.radio_button :sliding_scale_high, v.sliding_scale_high %><span><%= v.sliding_scale_high %></span><br>
     <% end %>
     <%= f.radio_button :sliding_scale_high, "" %>
     <input id='other_sliding_scale_high' type='text' class="other" value="">
@@ -333,7 +333,7 @@
       <%= f.radio_button :no_cost, @origin_clinic.no_cost %><%= @origin_clinic.no_cost %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :no_cost, v.no_cost %><%= v.no_cost %><br>
+    <%= f.radio_button :no_cost, v.no_cost %><span><%= v.no_cost %></span><br>
     <% end %>
     <%= f.radio_button :no_cost, "" %>
     <input id='other_no_cost' type='text' class="other" value="">
@@ -344,7 +344,7 @@
       <%= f.radio_button :low_cost, @origin_clinic.low_cost %><%= @origin_clinic.low_cost %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :low_cost, v.low_cost %><%= v.low_cost %><br>
+    <%= f.radio_button :low_cost, v.low_cost %><span><%= v.low_cost %></span><br>
     <% end %>
     <%= f.radio_button :low_cost, "" %>
     <input id='other_low_cost' type='text' class="other" value="">
@@ -355,7 +355,7 @@
       <%= f.radio_button :sliding_scale, @origin_clinic.sliding_scale %><%= @origin_clinic.sliding_scale %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale, v.sliding_scale %><%= v.sliding_scale %><br>
+    <%= f.radio_button :sliding_scale, v.sliding_scale %><span><%= v.sliding_scale %></span><br>
     <% end %>
     <%= f.radio_button :sliding_scale, "" %>
     <input id='other_sliding_scale' type='text' class="other" value="">
@@ -366,7 +366,7 @@
       <%= f.radio_button :uninsured_only, @origin_clinic.uninsured_only %><%= @origin_clinic.uninsured_only %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :uninsured_only, v.uninsured_only %><%= v.uninsured_only %><br>
+    <%= f.radio_button :uninsured_only, v.uninsured_only %><span><%= v.uninsured_only %></span><br>
     <% end %>
     <%= f.radio_button :uninsured_only, "" %>
     <input id='other_uninsured_only' type='text' class="other" value="">
@@ -377,7 +377,7 @@
       <%= f.radio_button :medicare, @origin_clinic.medicare %><%= @origin_clinic.medicare %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :medicare, v.medicare %><%= v.medicare %><br>
+    <%= f.radio_button :medicare, v.medicare %><span><%= v.medicare %></span><br>
     <% end %>
     <%= f.radio_button :medicare, "" %>
     <input id='other_medicare' type='text' class="other" value="">
@@ -611,27 +611,50 @@
     <% end %>
     
     <%= f.submit "Submit" %>
+    
   <% end %>
+  <form accept-charset="UTF-8" action="/appr_deny/deny" method="post">
+    <%= tag(:input, :type => "hidden", :name => request_forgery_protection_token.to_s, :value => form_authenticity_token) %> 
+    <input type="hidden" name="transc_id" value="<%= @transc_id %>">
+    <input name="commit" type="submit" value="Deny">
+  </form>
   
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script>
     $(function(){
-        console.log("ready");
-        var url = "results"
-        $.post()
-        $('#clinic_submit').on('click', function(){
-            console.log("submit");
-            $('.other').each(function (){
-                var $this = $(this);
-                console.log("value: " + $this.val());
-                console.log("prev_value: " + $this.prev().attr("value"));
-                $this.prev().attr("value", $this.val());
-            });
-        }); 
-
-
+      console.log("ready");
+      $('#clinic_submit').on('click', function(){
+          console.log("submit");
+          $('.other').each(function (){
+              var $this = $(this);
+              console.log("value: " + $this.val());
+              console.log("prev_value: " + $this.prev().attr("value"));
+              $this.prev().attr("value", $this.val());
+          });
+      });
+        
+      var attributes = ["CHIP", "alternative_name", "appointment_phone", "area_served", "city", "clinic_name", "clinic_type", "comments", "donation_phone", "fax", "fqhc", "last_updated", "lat", "lng", "low_cost", "low_cost_amount", "medicaid", "medicare", "no_cost", "other_email", "other_languages", "other_service", "pat_population_served", "payment_call_clinic", "payment_comments", "phone_comments", "primary_contact", "primary_email", "primary_phone", "primary_source", "private", "sliding_scale", "sliding_scale_high", "sliding_scale_low", "state", "street_addr1", "street_addr2", "uninsured_only", "website", "zipcode"];
+      
+      for(var i = 0; i < attributes.length; ++i){
+        var attr = attributes[i];
+        var name = 'clinic[' + attr + ']';
+        var value = [];
+        $("input[name='" + name + "']").each(function(){
+          $this = $(this);
+          
+          if($.inArray($this.val(), value)){
+            value.push($this.val())
+          }
+          else{
+            $this.next().next().remove();
+            $this.next().remove();
+            $this.remove();
+          }
+        });
+      }
     });
-
+    
+    
   </script>
 </body>
 </html>
