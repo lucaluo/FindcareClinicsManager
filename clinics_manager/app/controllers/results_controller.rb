@@ -36,6 +36,9 @@ class ResultsController < ApplicationController
 		@clinic_insert_service = Hash.new
 		@clinic_insert_service['ADD'] = Array.new
 		@clinic_insert_service['DELETE'] = Array.new
+		delete_duplicate_hash = Hash.new
+		delete_duplicate_hash['ADD'] = Hash.new
+		delete_duplicate_hash['DELETE'] = Hash.new
 
 		all_insert.each do |insert| 
 			@clinic_insert.push(ClinicInsert.find(insert.transc_id))
@@ -49,17 +52,19 @@ class ResultsController < ApplicationController
 			clinic_insert_service_single = ClinicInsertService.where(:transc_id => insert.transc_id)
 
 			clinic_insert_service_single.each do |insert_service| 
-				@clinic_insert_service[insert_service.update_status].push(insert_service)
+				if not delete_duplicate_hash[insert_service.update_status].has_key?(insert_service.service_abbr)
+					@clinic_insert_service[insert_service.update_status].push(insert_service.service_abbr)
+					delete_duplicate_hash[insert_service.update_status][insert_service.service_abbr] = true;
+				end
 			end
 		end
+
+		delete_duplicate_hash.clear
 
 	    respond_to do |format|
 	      format.html{ render 'results/details'}
 	      format.json{ render :json => @orders}
 	    end
 	end		
-
-
-	def get_form
-	end
 end
+
