@@ -451,10 +451,10 @@
         <% end %>
         
         <% array.each do |hour| %>
-          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= hour.hours_call_clinic %>">
+          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= hour.hours_call_clinic %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
           <span><%= hour.hours_call_clinic %></span><br>
         <% end %>
-        <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="">
+        <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="" >
         <input type='text' class="other" value=""><br><br>
       
        
@@ -465,7 +465,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][mon]" value="<%= hour.mon %>">
+         <input type="radio" name="hour[<%= type %>][mon]" value="<%= hour.mon %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.mon %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][mon]" value="">
@@ -478,7 +478,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][tue]" value="<%= hour.tue %>">
+         <input type="radio" name="hour[<%= type %>][tue]" value="<%= hour.tue %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.tue %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][tue]" value="">
@@ -491,7 +491,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][wed]" value="<%= hour.wed %>">
+         <input type="radio" name="hour[<%= type %>][wed]" value="<%= hour.wed %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.wed %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][wed]" value="">
@@ -504,7 +504,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][thr]" value="<%= hour.thr %>">
+         <input type="radio" name="hour[<%= type %>][thr]" value="<%= hour.thr %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.thr %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][thr]" value="">
@@ -517,7 +517,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][fri]" value="<%= hour.fri %>">
+         <input type="radio" name="hour[<%= type %>][fri]" value="<%= hour.fri %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.fri %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][fri]" value="">
@@ -530,7 +530,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][sat]" value="<%= hour.sat %>">
+         <input type="radio" name="hour[<%= type %>][sat]" value="<%= hour.sat %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.sat %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][sat]" value="">
@@ -543,7 +543,7 @@
         <% end %>
           
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][sun]" value="<%= hour.sun %>">
+         <input type="radio" name="hour[<%= type %>][sun]" value="<%= hour.sun %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.sun %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][sun]" value="">
@@ -556,7 +556,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>">
+         <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.appointment_only %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][appointment_only]" value="">
@@ -569,7 +569,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>">
+         <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.comment %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][comment]" value="">
@@ -582,7 +582,7 @@
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= hour.walkin_only %>">
+         <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= hour.walkin_only %>" <% if @origin_hour.nil? %>checked='checked'<% end %>>
          <span><%= hour.walkin_only %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
