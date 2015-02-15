@@ -441,6 +441,7 @@
     HOURS:<br><br>
     <% @clinic_insert_hour.each do |type, array| %>
       <% if not array.empty? %>
+        <div class="hours_block" id="<%= type %>">
         <%= type %><br><br>
         
         hours_call_clinic:<br>
@@ -586,22 +587,22 @@
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
         <input type='text' class="other" value=""><br>
-        
-      <% end %>
+        </div>  <!-- hours_block -->
+      <% end %> <!-- if not empty -->
     <% end %>
     
     SERVICE:<br><br>
-    <% if not @clinic_insert_service['ADD'] %>
+    <% if not @clinic_insert_service['ADD'].empty? %>
       add:<br>
       <% @clinic_insert_service['ADD'].each do |service_abbr| %>
-        <input type="checkbox" name="service_add[<%= service_abbr %>]"><%= service_abbr %><br>
+        <input type="checkbox" name="service_add" value="<%= service_abbr %>"><%= service_abbr %><br>
       <% end %>
     <% end %><br>
     
-    <% if not @clinic_insert_service['DELETE'] %>
+    <% if not @clinic_insert_service['DELETE'].empty? %>
       delete:<br>
       <% @clinic_insert_service['DELETE'].each do |service_abbr| %>
-        <input type="checkbox" name="service_delete[<%= service_abbr %>]"><%= service_abbr %><br>
+        <input type="checkbox" name="service_delete" value="<%= service_abbr %>"><%= service_abbr %><br>
       <% end %>
     <% end %>
     
@@ -632,15 +633,22 @@
               $this.prev().attr("value", $this.val());
           });
       });
+      
+      $('.other').each(function (){
+          var $this = $(this);
+          $this.prev().attr("value", "!@#$%");
+      });
         
       var attributes = ["CHIP", "alternative_name", "appointment_phone", "area_served", "city", "clinic_name", "clinic_type", "comments", "donation_phone", "fax", "fqhc", "last_updated", "lat", "lng", "low_cost", "low_cost_amount", "medicaid", "medicare", "no_cost", "other_email", "other_languages", "other_service", "pat_population_served", "payment_call_clinic", "payment_comments", "phone_comments", "primary_contact", "primary_email", "primary_phone", "primary_source", "private", "sliding_scale", "sliding_scale_high", "sliding_scale_low", "state", "street_addr1", "street_addr2", "uninsured_only", "website", "zipcode"];
+      
+      var hour_attributes = ["appointment_only", "comment", "dummy_hour_pk", "fri", "hour_type", "hours_call_clinic", "mon", "sat", "sun", "thr", "tue", "walkin_only", "wed"];
       
       for(var i = 0; i < attributes.length; ++i){
         var attr = attributes[i];
         var name = 'clinic[' + attr + ']';
         var value = [];
         $("input[name='" + name + "']").each(function(){
-          $this = $(this);
+          var $this = $(this);
           
           if($.inArray($this.val(), value)){
             value.push($this.val())
@@ -652,6 +660,28 @@
           }
         });
       }
+      
+      $(".hours_block").each(function(){
+        var $block = $(this);
+        var id = $block.attr('id');
+        for(var i = 0; i < hour_attributes.length; ++i){
+          var attr = hour_attributes[i];
+          var name = 'hour[' + id + '][' + attr + ']';
+          var value = [];
+          $block.find("input[name='" + name + "']").each(function(){
+            $this = $(this);
+            
+            if($.inArray($this.val(), value)){
+              value.push($this.val())
+            }
+            else{
+              $this.next().next().remove();
+              $this.next().remove();
+              $this.remove();
+            }
+          });
+        }
+      });
     });
     
     
