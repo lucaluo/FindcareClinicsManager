@@ -10,431 +10,431 @@
     
     clinic_name:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :clinic_name, @origin_clinic.clinic_name %><%= @origin_clinic.clinic_name %>(origin)<br>
+      <%= f.radio_button :clinic_name, @origin_clinic.clinic_name , :checked => true %><%= @origin_clinic.clinic_name %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :clinic_name, v.clinic_name %><span><%= v.clinic_name %></span><br>
+      <%= f.radio_button :clinic_name, v.clinic_name, :checked => false %><span><%= v.clinic_name %></span><br>
     <% end %>
-    <%= f.radio_button :clinic_name, "" %>
+    <%= f.radio_button :clinic_name, "", :checked => false %>
     <input id='other_clinic_name' type='text' class="other" value="">
     <br><br>
 
     alternative_name:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :alternative_name, @origin_clinic.alternative_name %><%= @origin_clinic.alternative_name %>(origin)<br>
+      <%= f.radio_button :alternative_name, @origin_clinic.alternative_name, :checked => true %><%= @origin_clinic.alternative_name %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :alternative_name, v.alternative_name %><span><%= v.alternative_name %></span><br>
+      <%= f.radio_button :alternative_name, v.alternative_name, :checked => false %><span><%= v.alternative_name %></span><br>
     <% end %>
-    <%= f.radio_button :alternative_name, "" %>
+    <%= f.radio_button :alternative_name, "", :checked => false %>
     <input id='other_alternative_name' type='text' class="other" value="">
     <br><br>
 
     lat:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :lat, @origin_clinic.lat %><%= @origin_clinic.lat %>(origin)<br>
+      <%= f.radio_button :lat, @origin_clinic.lat, :checked => true  %><%= @origin_clinic.lat %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-      <%= f.radio_button :lat, v.lat %><span><%= v.lat %></span><br>
+      <%= f.radio_button :lat, v.lat, :checked => false %><span><%= v.lat %></span><br>
     <% end %>
-    <%= f.radio_button :lat, "" %>
+    <%= f.radio_button :lat, "", :checked => false %>
     <input id='other_lat' type='text' class="other" value="">
     <br><br>
 
     lng:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :lng, @origin_clinic.lng %><%= @origin_clinic.lng %>(origin)<br>
+      <%= f.radio_button :lng, @origin_clinic.lng, :checked => true %><%= @origin_clinic.lng  %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :lng, v.lng %><span><%= v.lng %></span><br>
+    <%= f.radio_button :lng, v.lng, :checked => false %><span><%= v.lng %></span><br>
     <% end %>
-    <%= f.radio_button :lng, "" %>
+    <%= f.radio_button :lng, "", :checked => false %>
     <input id='other_lng' type='text' class="other" value="">
     <br><br>
     
     primary_source:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :primary_source, @origin_clinic.primary_source %><%= @origin_clinic.primary_source %>(origin)<br>
+      <%= f.radio_button :primary_source, @origin_clinic.primary_source, :checked => true  %><%= @origin_clinic.primary_source %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_source, v.primary_source %><span><%= v.primary_source %></span><br>
+    <%= f.radio_button :primary_source, v.primary_source, :checked => false %><span><%= v.primary_source %></span><br>
     <% end %>
-    <%= f.radio_button :primary_source, "" %>
+    <%= f.radio_button :primary_source, "", :checked => false %>
     <input id='other_primary_source' type='text' class="other" value="">
     <br><br>
     
     street_addr1:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :street_addr1, @origin_clinic.street_addr1 %><%= @origin_clinic.street_addr1 %>(origin)<br>
+      <%= f.radio_button :street_addr1, @origin_clinic.street_addr1, :checked => true  %><%= @origin_clinic.street_addr1 %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :street_addr1, v.street_addr1 %><span><%= v.street_addr1 %></span><br>
+    <%= f.radio_button :street_addr1, v.street_addr1, :checked => false %><span><%= v.street_addr1 %></span><br>
     <% end %>
-    <%= f.radio_button :street_addr1, "" %>
+    <%= f.radio_button :street_addr1, "", :checked => false %>
     <input id='other_street_addr1' type='text' class="other" value="">
     <br><br>
     
     street_addr2:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :street_addr2, @origin_clinic.street_addr2 %><%= @origin_clinic.street_addr2 %>(origin)<br>
+      <%= f.radio_button :street_addr2, @origin_clinic.street_addr2 , :checked => true %><%= @origin_clinic.street_addr2 %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :street_addr2, v.street_addr2 %><span><%= v.street_addr2 %></span><br>
+    <%= f.radio_button :street_addr2, v.street_addr2, :checked => false %><span><%= v.street_addr2 %></span><br>
     <% end %>
-    <%= f.radio_button :street_addr2, "" %>
+    <%= f.radio_button :street_addr2, "", :checked => false %>
     <input id='other_street_addr2' type='text' class="other" value="">
     <br><br>
     
     city:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :city, @origin_clinic.city %><%= @origin_clinic.city %>(origin)<br>
+      <%= f.radio_button :city, @origin_clinic.city, :checked => true%><%= @origin_clinic.city%>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :city, v.city %><span><%= v.city %></span><br>
+    <%= f.radio_button :city, v.city, :checked => false %><span><%= v.city %></span><br>
     <% end %>
-    <%= f.radio_button :city, "" %>
+    <%= f.radio_button :city, "", :checked => false %>
     <input id='other_city' type='text' class="other" value="">
     <br><br>
     
     state:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :state, @origin_clinic.state %><%= @origin_clinic.state %>(origin)<br>
+      <%= f.radio_button :state, @origin_clinic.state, :checked => true%><%= @origin_clinic.state%>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :state, v.state %><span><%= v.state %></span><br>
+    <%= f.radio_button :state, v.state, :checked => false %><span><%= v.state %></span><br>
     <% end %>
-    <%= f.radio_button :state, "" %>
+    <%= f.radio_button :state, "", :checked => false %>
     <input id='other_state' type='text' class="other" value="">
     <br><br>
     
     zipcode:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :zipcode, @origin_clinic.zipcode %><%= @origin_clinic.zipcode %>(origin)<br>
+      <%= f.radio_button :zipcode, @origin_clinic.zipcode , :checked => true %><%= @origin_clinic.zipcode %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :zipcode, v.zipcode %><span><%= v.zipcode %></span><br>
+    <%= f.radio_button :zipcode, v.zipcode, :checked => false %><span><%= v.zipcode %></span><br>
     <% end %>
-    <%= f.radio_button :zipcode, "" %>
+    <%= f.radio_button :zipcode, "", :checked => false %>
     <input id='other_zipcode' type='text' class="other" value="">
     <br><br>
     
     primary_phone:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :primary_phone, @origin_clinic.primary_phone %><%= @origin_clinic.primary_phone %>(origin)<br>
+      <%= f.radio_button :primary_phone, @origin_clinic.primary_phone, :checked => true %><%= @origin_clinic.primary_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_phone, v.primary_phone %><span><%= v.primary_phone %></span><br>
+    <%= f.radio_button :primary_phone, v.primary_phone, :checked => false %><span><%= v.primary_phone %></span><br>
     <% end %>
-    <%= f.radio_button :primary_phone, "" %>
+    <%= f.radio_button :primary_phone, "", :checked => false %>
     <input id='other_primary_phone' type='text' class="other" value="">
     <br><br>
     
     appointment_phone:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :appointment_phone, @origin_clinic.appointment_phone %><%= @origin_clinic.appointment_phone %>(origin)<br>
+      <%= f.radio_button :appointment_phone, @origin_clinic.appointment_phone, :checked => true %><%= @origin_clinic.appointment_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :appointment_phone, v.appointment_phone %><span><%= v.appointment_phone %></span><br>
+    <%= f.radio_button :appointment_phone, v.appointment_phone, :checked => false %><span><%= v.appointment_phone %></span><br>
     <% end %>
-    <%= f.radio_button :appointment_phone, "" %>
+    <%= f.radio_button :appointment_phone, "", :checked => false %>
     <input id='other_appointment_phone' type='text' class="other" value="">
     <br><br>
     
     
     donation_phone:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :donation_phone, @origin_clinic.donation_phone %><%= @origin_clinic.donation_phone %>(origin)<br>
+      <%= f.radio_button :donation_phone, @origin_clinic.donation_phone, :checked => true %><%= @origin_clinic.donation_phone %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :donation_phone, v.donation_phone %><span><%= v.donation_phone %></span><br>
+    <%= f.radio_button :donation_phone, v.donation_phone, :checked => false %><span><%= v.donation_phone %></span><br>
     <% end %>
-    <%= f.radio_button :donation_phone, "" %>
+    <%= f.radio_button :donation_phone, "", :checked => false %>
     <input id='other_donation_phone' type='text' class="other" value="">
     <br><br>
     
     phone_comments:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :phone_comments, @origin_clinic.phone_comments %><%= @origin_clinic.phone_comments %>(origin)<br>
+      <%= f.radio_button :phone_comments, @origin_clinic.phone_comments, :checked => true %><%= @origin_clinic.phone_comments %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :phone_comments, v.phone_comments %><span><%= v.phone_comments %></span><br>
+    <%= f.radio_button :phone_comments, v.phone_comments, :checked => false %><span><%= v.phone_comments %></span><br>
     <% end %>
-    <%= f.radio_button :phone_comments, "" %>
+    <%= f.radio_button :phone_comments, "", :checked => false %>
     <input id='other_phone_comments' type='text' class="other" value="">
     <br><br>
     
     fax:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :fax, @origin_clinic.fax %><%= @origin_clinic.fax %>(origin)<br>
+      <%= f.radio_button :fax, @origin_clinic.fax, :checked => true %><%= @origin_clinic.fax %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :fax, v.fax %><span><%= v.fax %></span><br>
+    <%= f.radio_button :fax, v.fax, :checked => false %><span><%= v.fax %></span><br>
     <% end %>
-    <%= f.radio_button :fax, "" %>
+    <%= f.radio_button :fax, "", :checked => false %>
     <input id='other_fax' type='text' class="other" value="">
     <br><br>
     
     clinic_type:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :clinic_type, @origin_clinic.clinic_type %><%= @origin_clinic.clinic_type %>(origin)<br>
+      <%= f.radio_button :clinic_type, @origin_clinic.clinic_type, :checked => true %><%= @origin_clinic.clinic_type %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :clinic_type, v.clinic_type %><span><%= v.clinic_type %></span><br>
+    <%= f.radio_button :clinic_type, v.clinic_type, :checked => false %><span><%= v.clinic_type %></span><br>
     <% end %>
-    <%= f.radio_button :clinic_type, "" %>
+    <%= f.radio_button :clinic_type, "", :checked => false %>
     <input id='other_clinic_type' type='text' class="other" value="">
     <br><br>
     
     website:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :website, @origin_clinic.website %><%= @origin_clinic.website %>(origin)<br>
+      <%= f.radio_button :website, @origin_clinic.website, :checked => true %><%= @origin_clinic.website %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :website, v.website %><span><%= v.website %></span><br>
+    <%= f.radio_button :website, v.website, :checked => false %><span><%= v.website %></span><br>
     <% end %>
-    <%= f.radio_button :website, "" %>
+    <%= f.radio_button :website, "", :checked => false %>
     <input id='other_website' type='text' class="other" value="">
     <br><br>
     
     primary_contact:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :primary_contact, @origin_clinic.primary_contact %><%= @origin_clinic.primary_contact %>(origin)<br>
+      <%= f.radio_button :primary_contact, @origin_clinic.primary_contact, :checked => true %><%= @origin_clinic.primary_contact %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_contact, v.primary_contact %><span><%= v.primary_contact %></span><br>
+    <%= f.radio_button :primary_contact, v.primary_contact, :checked => false %><span><%= v.primary_contact %></span><br>
     <% end %>
-    <%= f.radio_button :primary_contact, "" %>
+    <%= f.radio_button :primary_contact, "", :checked => false %>
     <input id='other_primary_contact' type='text' class="other" value="">
     <br><br>
     
     primary_email:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :primary_email, @origin_clinic.primary_email %><%= @origin_clinic.primary_email %>(origin)<br>
+      <%= f.radio_button :primary_email, @origin_clinic.primary_email, :checked => true %><%= @origin_clinic.primary_email %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :primary_email, v.primary_email %><span><%= v.primary_email %></span><br>
+    <%= f.radio_button :primary_email, v.primary_email, :checked => false %><span><%= v.primary_email %></span><br>
     <% end %>
-    <%= f.radio_button :primary_email, "" %>
+    <%= f.radio_button :primary_email, "", :checked => false %>
     <input id='other_primary_email' type='text' class="other" value="">
     <br><br>
     
     other_email:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :other_email, @origin_clinic.other_email %><%= @origin_clinic.other_email %>(origin)<br>
+      <%= f.radio_button :other_email, @origin_clinic.other_email, :checked => true %><%= @origin_clinic.other_email %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_email, v.other_email %><span><%= v.other_email %></span><br>
+    <%= f.radio_button :other_email, v.other_email, :checked => false %><span><%= v.other_email %></span><br>
     <% end %>
-    <%= f.radio_button :other_email, "" %>
+    <%= f.radio_button :other_email, "", :checked => false %>
     <input id='other_other_email' type='text' class="other" value="">
     <br><br>
     
     fqhc:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :fqhc, @origin_clinic.fqhc %><%= @origin_clinic.fqhc %>(origin)<br>
+      <%= f.radio_button :fqhc, @origin_clinic.fqhc, :checked => true %><%= @origin_clinic.fqhc %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :fqhc, v.fqhc %><span><%= v.fqhc %></span><br>
+    <%= f.radio_button :fqhc, v.fqhc, :checked => false %><span><%= v.fqhc %></span><br>
     <% end %>
-    <%= f.radio_button :fqhc, "" %>
+    <%= f.radio_button :fqhc, "", :checked => false %>
     <input id='other_fqhc' type='text' class="other" value="">
     <br><br>
     
     other_languages:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :other_languages, @origin_clinic.other_languages %><%= @origin_clinic.other_languages %>(origin)<br>
+      <%= f.radio_button :other_languages, @origin_clinic.other_languages, :checked => true %><%= @origin_clinic.other_languages %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_languages, v.other_languages %><span><%= v.other_languages %></span><br>
+    <%= f.radio_button :other_languages, v.other_languages, :checked => false %><span><%= v.other_languages %></span><br>
     <% end %>
-    <%= f.radio_button :other_languages, "" %>
+    <%= f.radio_button :other_languages, "", :checked => false %>
     <input id='other_other_languages' type='text' class="other" value="">
     <br><br>
     
     pat_population_served:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :pat_population_served, @origin_clinic.pat_population_served %><%= @origin_clinic.pat_population_served %>(origin)<br>
+      <%= f.radio_button :pat_population_served, @origin_clinic.pat_population_served, :checked => true %><%= @origin_clinic.pat_population_served %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :pat_population_served, v.pat_population_served %><span><%= v.pat_population_served %></span><br>
+    <%= f.radio_button :pat_population_served, v.pat_population_served, :checked => false %><span><%= v.pat_population_served %></span><br>
     <% end %>
-    <%= f.radio_button :pat_population_served, "" %>
+    <%= f.radio_button :pat_population_served, "", :checked => false %>
     <input id='other_pat_population_served' type='text' class="other" value="">
     <br><br>
     
     area_served:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :area_served, @origin_clinic.area_served %><%= @origin_clinic.area_served %>(origin)<br>
+      <%= f.radio_button :area_served, @origin_clinic.area_served, :checked => true %><%= @origin_clinic.area_served %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :area_served, v.area_served %><span><%= v.area_served %></span><br>
+    <%= f.radio_button :area_served, v.area_served, :checked => false %><span><%= v.area_served %></span><br>
     <% end %>
-    <%= f.radio_button :area_served, "" %>
+    <%= f.radio_button :area_served, "", :checked => false %>
     <input id='other_area_served' type='text' class="other" value="">
     <br><br>
     
     comments:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :comments, @origin_clinic.comments %><%= @origin_clinic.comments %>(origin)<br>
+      <%= f.radio_button :comments, @origin_clinic.comments, :checked => true %><%= @origin_clinic.comments %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :comments, v.comments %><span><%= v.comments %></span><br>
+    <%= f.radio_button :comments, v.comments, :checked => false %><span><%= v.comments %></span><br>
     <% end %>
-    <%= f.radio_button :comments, "" %>
+    <%= f.radio_button :comments, "", :checked => false %>
     <input id='other_comments' type='text' class="other" value="">
     <br><br>
     
     other_service:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :other_service, @origin_clinic.other_service %><%= @origin_clinic.other_service %>(origin)<br>
+      <%= f.radio_button :other_service, @origin_clinic.other_service, :checked => true %><%= @origin_clinic.other_service %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :other_service, v.other_service %><span><%= v.other_service %></span><br>
+    <%= f.radio_button :other_service, v.other_service, :checked => false %><span><%= v.other_service %></span><br>
     <% end %>
-    <%= f.radio_button :other_service, "" %>
+    <%= f.radio_button :other_service, "", :checked => false %>
     <input id='other_other_service' type='text' class="other" value="">
     <br><br>
     
     low_cost_amount:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :low_cost_amount, @origin_clinic.low_cost_amount %><%= @origin_clinic.low_cost_amount %>(origin)<br>
+      <%= f.radio_button :low_cost_amount, @origin_clinic.low_cost_amount, :checked => true %><%= @origin_clinic.low_cost_amount %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :low_cost_amount, v.low_cost_amount %><span><%= v.low_cost_amount %></span><br>
+    <%= f.radio_button :low_cost_amount, v.low_cost_amount, :checked => false %><span><%= v.low_cost_amount %></span><br>
     <% end %>
-    <%= f.radio_button :low_cost_amount, "" %>
+    <%= f.radio_button :low_cost_amount, "", :checked => false %>
     <input id='other_low_cost_amount' type='text' class="other" value="">
     <br><br>
     
     sliding_scale_low:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :sliding_scale_low, @origin_clinic.sliding_scale_low %><%= @origin_clinic.sliding_scale_low %>(origin)<br>
+      <%= f.radio_button :sliding_scale_low, @origin_clinic.sliding_scale_low, :checked => true %><%= @origin_clinic.sliding_scale_low %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale_low, v.sliding_scale_low %><span><%= v.sliding_scale_low %></span><br>
+    <%= f.radio_button :sliding_scale_low, v.sliding_scale_low, :checked => false %><span><%= v.sliding_scale_low %></span><br>
     <% end %>
-    <%= f.radio_button :sliding_scale_low, "" %>
+    <%= f.radio_button :sliding_scale_low, "", :checked => false %>
     <input id='other_sliding_scale_low' type='text' class="other" value="">
     <br><br>
     
     sliding_scale_high:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :sliding_scale_high, @origin_clinic.sliding_scale_high %><%= @origin_clinic.sliding_scale_high %>(origin)<br>
+      <%= f.radio_button :sliding_scale_high, @origin_clinic.sliding_scale_high, :checked => true %><%= @origin_clinic.sliding_scale_high %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale_high, v.sliding_scale_high %><span><%= v.sliding_scale_high %></span><br>
+    <%= f.radio_button :sliding_scale_high, v.sliding_scale_high, :checked => false %><span><%= v.sliding_scale_high %></span><br>
     <% end %>
-    <%= f.radio_button :sliding_scale_high, "" %>
+    <%= f.radio_button :sliding_scale_high, "", :checked => false %>
     <input id='other_sliding_scale_high' type='text' class="other" value="">
     <br><br>
     
     no_cost:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :no_cost, @origin_clinic.no_cost %><%= @origin_clinic.no_cost %>(origin)<br>
+      <%= f.radio_button :no_cost, @origin_clinic.no_cost, :checked => true %><%= @origin_clinic.no_cost %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :no_cost, v.no_cost %><span><%= v.no_cost %></span><br>
+    <%= f.radio_button :no_cost, v.no_cost, :checked => false %><span><%= v.no_cost %></span><br>
     <% end %>
-    <%= f.radio_button :no_cost, "" %>
+    <%= f.radio_button :no_cost, "", :checked => false %>
     <input id='other_no_cost' type='text' class="other" value="">
     <br><br>
     
     low_cost:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :low_cost, @origin_clinic.low_cost %><%= @origin_clinic.low_cost %>(origin)<br>
+      <%= f.radio_button :low_cost, @origin_clinic.low_cost, :checked => true %><%= @origin_clinic.low_cost %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :low_cost, v.low_cost %><span><%= v.low_cost %></span><br>
+    <%= f.radio_button :low_cost, v.low_cost, :checked => false %><span><%= v.low_cost %></span><br>
     <% end %>
-    <%= f.radio_button :low_cost, "" %>
+    <%= f.radio_button :low_cost, "", :checked => false %>
     <input id='other_low_cost' type='text' class="other" value="">
     <br><br>
     
     sliding_scale:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :sliding_scale, @origin_clinic.sliding_scale %><%= @origin_clinic.sliding_scale %>(origin)<br>
+      <%= f.radio_button :sliding_scale, @origin_clinic.sliding_scale, :checked => true %><%= @origin_clinic.sliding_scale %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :sliding_scale, v.sliding_scale %><span><%= v.sliding_scale %></span><br>
+    <%= f.radio_button :sliding_scale, v.sliding_scale, :checked => false %><span><%= v.sliding_scale %></span><br>
     <% end %>
-    <%= f.radio_button :sliding_scale, "" %>
+    <%= f.radio_button :sliding_scale, "", :checked => false %>
     <input id='other_sliding_scale' type='text' class="other" value="">
     <br><br>
     
     uninsured_only:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :uninsured_only, @origin_clinic.uninsured_only %><%= @origin_clinic.uninsured_only %>(origin)<br>
+      <%= f.radio_button :uninsured_only, @origin_clinic.uninsured_only, :checked => true %><%= @origin_clinic.uninsured_only %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :uninsured_only, v.uninsured_only %><span><%= v.uninsured_only %></span><br>
+    <%= f.radio_button :uninsured_only, v.uninsured_only, :checked => false %><span><%= v.uninsured_only %></span><br>
     <% end %>
-    <%= f.radio_button :uninsured_only, "" %>
+    <%= f.radio_button :uninsured_only, "" , :checked => false%>
     <input id='other_uninsured_only' type='text' class="other" value="">
     <br><br>
     
     medicare:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :medicare, @origin_clinic.medicare %><%= @origin_clinic.medicare %>(origin)<br>
+      <%= f.radio_button :medicare, @origin_clinic.medicare, :checked => true %><%= @origin_clinic.medicare %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :medicare, v.medicare %><span><%= v.medicare %></span><br>
+    <%= f.radio_button :medicare, v.medicare, :checked => false %><span><%= v.medicare %></span><br>
     <% end %>
-    <%= f.radio_button :medicare, "" %>
+    <%= f.radio_button :medicare, "", :checked => false %>
     <input id='other_medicare' type='text' class="other" value="">
     <br><br>
     
     medicaid:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :medicaid, @origin_clinic.medicaid %><%= @origin_clinic.medicaid %>(origin)<br>
+      <%= f.radio_button :medicaid, @origin_clinic.medicaid, :checked => true %><%= @origin_clinic.medicaid %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :medicaid, v.medicaid %><span><%= v.medicaid %></span><br>
+    <%= f.radio_button :medicaid, v.medicaid , :checked => false%><span><%= v.medicaid %></span><br>
     <% end %>
-    <%= f.radio_button :medicaid, "" %>
+    <%= f.radio_button :medicaid, "" , :checked => false%>
     <input id='other_medicaid' type='text' class="other" value="">
     <br><br>
     
     CHIP:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :CHIP, @origin_clinic.CHIP %><%= @origin_clinic.CHIP %>(origin)<br>
+      <%= f.radio_button :CHIP, @origin_clinic.CHIP, :checked => true %><%= @origin_clinic.CHIP %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :CHIP, v.CHIP %><span><%= v.CHIP %></span><br>
+    <%= f.radio_button :CHIP, v.CHIP, :checked => false %><span><%= v.CHIP %></span><br>
     <% end %>
-    <%= f.radio_button :CHIP, "" %>
+    <%= f.radio_button :CHIP, "" , :checked => false%>
     <input id='other_CHIP' type='text' class="other" value="">
     <br><br>
     
     private:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :private, @origin_clinic.private %><%= @origin_clinic.private %>(origin)<br>
+      <%= f.radio_button :private, @origin_clinic.private, :checked => true %><%= @origin_clinic.private %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :private, v.private %><span><%= v.private %></span><br>
+    <%= f.radio_button :private, v.private, :checked => false %><span><%= v.private %></span><br>
     <% end %>
-    <%= f.radio_button :private, "" %>
+    <%= f.radio_button :private, "" , :checked => false%>
     <input id='other_private' type='text' class="other" value="">
     <br><br>
     
     payment_call_clinic:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :payment_call_clinic, @origin_clinic.payment_call_clinic %><%= @origin_clinic.payment_call_clinic %>(origin)<br>
+      <%= f.radio_button :payment_call_clinic, @origin_clinic.payment_call_clinic, :checked => true %><%= @origin_clinic.payment_call_clinic %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :payment_call_clinic, v.payment_call_clinic %><span><%= v.payment_call_clinic %></span><br>
+    <%= f.radio_button :payment_call_clinic, v.payment_call_clinic, :checked => false %><span><%= v.payment_call_clinic %></span><br>
     <% end %>
-    <%= f.radio_button :payment_call_clinic, "" %>
+    <%= f.radio_button :payment_call_clinic, "" , :checked => false%>
     <input id='other_payment_call_clinic' type='text' class="other" value="">
     <br><br>
     
     payment_comments:<br>
     <% if not @origin_clinic.nil? %>
-      <%= f.radio_button :payment_comments, @origin_clinic.payment_comments %><%= @origin_clinic.payment_comments %>(origin)<br>
+      <%= f.radio_button :payment_comments, @origin_clinic.payment_comments, :checked => true %><%= @origin_clinic.payment_comments %>(origin)<br>
     <% end %>
     <% @clinic_insert.each do |v| %>
-    <%= f.radio_button :payment_comments, v.payment_comments %><span><%= v.payment_comments %></span><br>
+    <%= f.radio_button :payment_comments, v.payment_comments , :checked => false%><span><%= v.payment_comments %></span><br>
     <% end %>
-    <%= f.radio_button :payment_comments, "" %>
+    <%= f.radio_button :payment_comments, "", :checked => false %>
     <input id='other_payment_comments' type='text' class="other" value="">
     <br><br><br>
     
@@ -446,7 +446,7 @@
         
         hours_call_clinic:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= @origin_hour[type].hours_call_clinic %>">
+          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= @origin_hour[type].hours_call_clinic %>" checked='checked'>
           <%= @origin_hour[type].hours_call_clinic %>(origin)<br>
         <% end %>
         
@@ -460,7 +460,7 @@
        
         mon:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][mon]" value="<%= @origin_hour[type].mon %>">
+          <input type="radio" name="hour[<%= type %>][mon]" value="<%= @origin_hour[type].mon %>" checked='checked'>
           <%= @origin_hour[type].mon %>(origin)<br>
         <% end %>
         
@@ -473,7 +473,7 @@
        
         tue:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][tue]" value="<%= @origin_hour[type].tue %>">
+          <input type="radio" name="hour[<%= type %>][tue]" value="<%= @origin_hour[type].tue %>" checked='checked'>
           <%= @origin_hour[type].tue %>(origin)<br>
         <% end %>
         
@@ -486,7 +486,7 @@
 
         wed:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][wed]" value="<%= @origin_hour[type].wed %>">
+          <input type="radio" name="hour[<%= type %>][wed]" value="<%= @origin_hour[type].wed %>" checked='checked'>
           <%= @origin_hour[type].wed %>(origin)<br>
         <% end %>
         
@@ -499,7 +499,7 @@
 
         thr:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][thr]" value="<%= @origin_hour[type].thr %>">
+          <input type="radio" name="hour[<%= type %>][thr]" value="<%= @origin_hour[type].thr %>" checked='checked'>
           <%= @origin_hour[type].thr %>(origin)<br>
         <% end %>
         
@@ -512,7 +512,7 @@
 
         fri:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][fri]" value="<%= @origin_hour[type].fri %>">
+          <input type="radio" name="hour[<%= type %>][fri]" value="<%= @origin_hour[type].fri %>" checked='checked'>
           <%= @origin_hour[type].fri %>(origin)<br>
         <% end %>
         
@@ -525,7 +525,7 @@
         
         sat:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][sat]" value="<%= @origin_hour[type].sat %>">
+          <input type="radio" name="hour[<%= type %>][sat]" value="<%= @origin_hour[type].sat %>" checked='checked'>
           <%= @origin_hour[type].sat %>(origin)<br>
         <% end %>
         
@@ -538,7 +538,7 @@
         
         sun:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][sun]" value="<%= @origin_hour[type].sun %>">
+          <input type="radio" name="hour[<%= type %>][sun]" value="<%= @origin_hour[type].sun %>" checked='checked'>
           <%= @origin_hour[type].sun %>(origin)<br>
         <% end %>
           
@@ -551,7 +551,7 @@
         
         appointment_only:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= @origin_hour[type].appointment_only %>">
+          <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= @origin_hour[type].appointment_only %>" checked='checked'>
           <%= @origin_hour[type].appointment_only %>(origin)<br>
         <% end %>
         
@@ -564,7 +564,7 @@
         
         comment:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][comment]" value="<%= @origin_hour[type].comment %>">
+          <input type="radio" name="hour[<%= type %>][comment]" value="<%= @origin_hour[type].comment %>" checked='checked'>
           <%= @origin_hour[type].comment %>(origin)<br>
         <% end %>
         
@@ -577,7 +577,7 @@
         
         walkin_only:<br>
         <% if not @origin_hour.nil? %>
-          <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= @origin_hour[type].walkin_only %>">
+          <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= @origin_hour[type].walkin_only %>" checked='checked'>
           <%= @origin_hour[type].walkin_only %>(origin)<br>
         <% end %>
         
@@ -683,7 +683,6 @@
         }
       });
     });
-    
     
   </script>
 </body>
