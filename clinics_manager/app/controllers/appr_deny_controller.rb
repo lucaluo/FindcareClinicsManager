@@ -15,6 +15,7 @@ class ApprDenyController < ApplicationController
       @clinic = Clinic.new
       @clinic.update_attributes(@form_params)
       @clinic.save
+      print @clinic.clinic_id
       @clinic_insert.approve = "Y"
     end
 
@@ -23,7 +24,7 @@ class ApprDenyController < ApplicationController
     if @hours != nil
       @hours.each do |type, value|
         @clinic_hour = Hours.where(:clinic_id => @clinic.clinic_id, :hour_type => type)
-        if @clinic_hour != nil && @clinic_hour[0] != nil
+        if !@clinic_hour.empty?()
           @clinic_hour[0].update_attributes(value)
         elsif @clinic_hour[0] == nil
           @new_clinic_hour = Hours.new(value)
@@ -45,7 +46,9 @@ class ApprDenyController < ApplicationController
     if @clinic_services_delete != nil
       @clinic_services_delete.each do |service_delete|
         clinic_service_to_delete = ClinicService.where("clinic_id = ? AND service_abbr = ?", @clinic.clinic_id, service_delete[:service_abbr])
-        clinic_service_to_delete.delete
+        if !clinic_service_to_delete.empty?()
+          clinic_service_to_delete.delete
+        end
       end
     end
 
