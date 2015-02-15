@@ -30,10 +30,13 @@ class ResultsController < ApplicationController
 			@clinic = Clinic.new
 			@origin_hour = nil
 		end
-		all_insert = ClinicInsert.where(:clinic_id => clinic_id) 
 
-
-
+		all_insert = Array.new
+		if clinic_id == nil
+			all_insert.push(single_insert)
+		else
+			all_insert = ClinicInsert.where(:clinic_id => clinic_id) 
+		end
 		@clinic_insert_service = Hash.new
 		@clinic_insert_service['ADD'] = Array.new
 		@clinic_insert_service['DELETE'] = Array.new
