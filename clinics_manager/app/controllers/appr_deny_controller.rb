@@ -36,7 +36,7 @@ class ApprDenyController < ApplicationController
     @clinic_services_add = params[:service_add]
     if @clinic_services_add != nil
       @clinic_services_add.each do |service_add|
-        new_clinic_service = Clinic_Service.new
+        new_clinic_service = ClinicService.new
         new_clinic_service.update_attributes(service_add)
         new_clinic_service.save
       end
@@ -44,11 +44,11 @@ class ApprDenyController < ApplicationController
     @clinic_services_delete = params[:service_delete]
     if @clinic_services_delete != nil
       @clinic_services_delete.each do |service_delete|
-        clinic_service_to_delete = Clinic_Service.where("clinic_id = ? AND service_abbr = ?", @clinic.clinic_id, service_delete[:service_abbr])
+        clinic_service_to_delete = ClinicService.where("clinic_id = ? AND service_abbr = ?", @clinic.clinic_id, service_delete[:service_abbr])
         clinic_service_to_delete.delete
       end
     end
-    
+
   end
 
 
