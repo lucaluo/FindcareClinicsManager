@@ -11,6 +11,8 @@ class ResultsController < ApplicationController
 			@clinic_insert_hour[hour_type.hour_type] = Array.new
 		end
 
+		@clinic_insert_hour["notype"] = Array.new
+
 		@transc_id = params[:transc_id]
 		single_insert = ClinicInsert.find(@transc_id)
 		clinic_id = single_insert.clinic_id
@@ -22,7 +24,11 @@ class ResultsController < ApplicationController
 
 			origin_hour_single = Hours.where(:clinic_id => clinic_id)
 			origin_hour_single.each do |origin_hour|
-				@origin_hour[origin_hour.hour_type] = origin_hour
+				if origin_hour.hour_type == ""
+					@origin_hour["notype"] = origin_hour
+				else
+					@origin_hour[origin_hour.hour_type] = origin_hour
+				end
 			end
 		else
 			@origin_hour = nil
@@ -50,7 +56,11 @@ class ResultsController < ApplicationController
 			clinic_insert_hour_single = ClinicInsertHour.where(:transc_id => insert.transc_id)
 
 			clinic_insert_hour_single.each do |insert_hour|
-				@clinic_insert_hour[insert_hour.hour_type].push(insert_hour)
+				if insert_hour.hour_type == ""
+					@clinic_insert_hour["notype"].push(insert_hour)
+				else
+					@clinic_insert_hour[insert_hour.hour_type].push(insert_hour)
+				end
 			end
 
 			clinic_insert_service_single = ClinicInsertService.where(:transc_id => insert.transc_id)
