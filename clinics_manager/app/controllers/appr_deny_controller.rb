@@ -17,6 +17,7 @@ class ApprDenyController < ApplicationController
       @clinic.save
       print @clinic.clinic_id
       @clinic_insert.approve = "Y"
+      @clinic_insert.save
     end
 
     #update or add hours
