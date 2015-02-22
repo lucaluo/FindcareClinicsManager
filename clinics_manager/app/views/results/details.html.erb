@@ -595,14 +595,14 @@
     <% if not @clinic_insert_service['ADD'].empty? %>
       add:<br>
       <% @clinic_insert_service['ADD'].each do |service_abbr| %>
-        <input type="checkbox" name="service_add[]" value="<%= service_abbr %>"><%= service_abbr %><br>
+        <input type="checkbox" name="service_add[]" value="<%= service_abbr %>" checked ="checked"><%= service_abbr %><br>
       <% end %>
     <% end %><br>
     
     <% if not @clinic_insert_service['DELETE'].empty? %>
       delete:<br>
       <% @clinic_insert_service['DELETE'].each do |service_abbr| %>
-        <input type="checkbox" name="service_delete[]" value="<%= service_abbr %>"><%= service_abbr %><br>
+        <input type="checkbox" name="service_delete[]" value="<%= service_abbr %>" checked = "checked"><%= service_abbr %><br>
       <% end %>
     <% end %>
     
