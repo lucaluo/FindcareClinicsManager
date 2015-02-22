@@ -654,7 +654,8 @@
           $this = $(this);
           
           if($.inArray($this.val(), value)){
-            value.push($this.val())
+            if($this.val() != 'on')
+              value.push($this.val());
           }
           else{
             $this.next().next().remove();
@@ -662,10 +663,12 @@
             $this.remove();
           }
         });
-        
-        if(value.length == 2){
+        <% if not @origin_clinic.nil? %>
+        console.log(value.length);
+        if(value.length <= 2){
           $this.parent(".attr_block").hide();
         }
+        <% end %>
       }
       
       $(".hours_block").each(function(){
@@ -681,7 +684,8 @@
             $this = $(this);
             
             if($.inArray($this.val(), value)){
-              value.push($this.val())
+              if($this.val() != 'on')
+                value.push($this.val());
             }
             else{
               $this.next().next().remove();
@@ -689,12 +693,14 @@
               $this.remove();
             }
           });
-          console.log(value.length);
-          if(value.length == 2){
+          <% if not @origin_clinic.nil? %>
+          
+          if(value.length <= 2){
             $this.parent(".attr_block").hide();
           } else
             has_change = true;
           if(!has_change) $(this).hide();
+          <% end %>
         }
         
       });
