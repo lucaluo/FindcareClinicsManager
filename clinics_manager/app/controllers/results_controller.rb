@@ -8,7 +8,9 @@ class ResultsController < ApplicationController
 		@clinic_insert_hour = Hash.new
 		all_hour_type = Hours.select('hour_type').uniq
 		all_hour_type.each do |hour_type|
-			@clinic_insert_hour[hour_type.hour_type] = Array.new
+			if hour_type != ""
+				@clinic_insert_hour[hour_type.hour_type] = Array.new
+			end
 		end
 
 		@clinic_insert_hour["notype"] = Array.new
