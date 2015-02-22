@@ -47,7 +47,7 @@ nav{
 			<% item.each do |record| %>
 				<tr class="content" name="clinic<%= record.clinic_id %>">
 					<td><%= record.transc_id %></td>
-					<td><a href="/results?<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
+					<td><a href="/results?transc_id=<%= record.transc_id %>" class="hidden_link"><%= record.clinic_id %></a></td>
 					<td><%= record.clinic_name %></td>
 					<td><%= record.update_status %></td>
 					<td><%= record.last_updated %></td>
