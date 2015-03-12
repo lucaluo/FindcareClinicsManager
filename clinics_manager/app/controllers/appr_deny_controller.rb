@@ -24,6 +24,7 @@ class ApprDenyController < ApplicationController
     @hours = params[:hour]
     if @hours != nil
       @hours.each do |type, value|
+        if type == "no type" then type = "" end
         @clinic_hour = Hours.where(:clinic_id => @clinic.clinic_id, :hour_type => type)
         if !@clinic_hour.empty?()
           @clinic_hour[0].update_attributes(value)
