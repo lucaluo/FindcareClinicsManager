@@ -50,13 +50,13 @@ class ApprDenyController < SecuredController
       end
     end
 
-    
+
     @clinic_services_delete = params[:service_delete]
     if @clinic_services_delete != nil
       @clinic_services_delete.each do |service_delete|
-        clinic_service_to_delete = ClinicService.where("clinic_id = ? AND service_abbr = ?", @clinic.clinic_id, service_delete[:service_abbr])
+        clinic_service_to_delete = ClinicService.where(:clinic_id => @clinic.clinic_id, :service_abbr => service_delete)
         if !clinic_service_to_delete.empty?()
-          clinic_service_to_delete.delete
+          clinic_service_to_delete[0].delete
         end
       end
     end
