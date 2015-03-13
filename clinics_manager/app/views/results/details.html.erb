@@ -452,8 +452,11 @@
     <h1>HOURS:</h1><br>
     <% @clinic_insert_hour.each do |type, array| %>
       <% if not array.empty? %>
+        <% if type == "notype" then dummy_type = "" else dummy_type = type end %>
+        
+        
         <div class="hours_block" id="<%= type %>"
-          <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
+          <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
           data-status="add"
           <% else %>
           data-status="update"
@@ -462,20 +465,20 @@
         <hr>
         <h3><%= type %></h3>
         
-        <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
+        <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
         <input type="checkbox" class="hour_approve_checkbox"> Disapprove<br><br>
         <% end %>
         
         <div class="attr_block">
         
         hours_call_clinic:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= @origin_hour[type].hours_call_clinic %>" checked='checked'>
-          <%= @origin_hour[type].hours_call_clinic %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= @origin_hour[dummy_type].hours_call_clinic %>" checked='checked'>
+          <%= @origin_hour[dummy_type].hours_call_clinic %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= hour.hours_call_clinic %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+          <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="<%= hour.hours_call_clinic %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
           <span><%= hour.hours_call_clinic %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][hours_call_clinic]" value="" >
@@ -483,130 +486,130 @@
       
        
         mon:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][mon]" value="<%= @origin_hour[type].mon %>" checked='checked'>
-          <%= @origin_hour[type].mon %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][mon]" value="<%= @origin_hour[dummy_type].mon %>" checked='checked'>
+          <%= @origin_hour[dummy_type].mon %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][mon]" value="<%= hour.mon %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][mon]" value="<%= hour.mon %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.mon %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][mon]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
        
         tue:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][tue]" value="<%= @origin_hour[type].tue %>" checked='checked'>
-          <%= @origin_hour[type].tue %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][tue]" value="<%= @origin_hour[dummy_type].tue %>" checked='checked'>
+          <%= @origin_hour[dummy_type].tue %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][tue]" value="<%= hour.tue %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][tue]" value="<%= hour.tue %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.tue %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][tue]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
 
         wed:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][wed]" value="<%= @origin_hour[type].wed %>" checked='checked'>
-          <%= @origin_hour[type].wed %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][wed]" value="<%= @origin_hour[dummy_type].wed %>" checked='checked'>
+          <%= @origin_hour[dummy_type].wed %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][wed]" value="<%= hour.wed %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][wed]" value="<%= hour.wed %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.wed %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][wed]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
 
         thr:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][thr]" value="<%= @origin_hour[type].thr %>" checked='checked'>
-          <%= @origin_hour[type].thr %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][thr]" value="<%= @origin_hour[dummy_type].thr %>" checked='checked'>
+          <%= @origin_hour[dummy_type].thr %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][thr]" value="<%= hour.thr %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][thr]" value="<%= hour.thr %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.thr %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][thr]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
 
         fri:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][fri]" value="<%= @origin_hour[type].fri %>" checked='checked'>
-          <%= @origin_hour[type].fri %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][fri]" value="<%= @origin_hour[dummy_type].fri %>" checked='checked'>
+          <%= @origin_hour[dummy_type].fri %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][fri]" value="<%= hour.fri %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][fri]" value="<%= hour.fri %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.fri %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][fri]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
         
         sat:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][sat]" value="<%= @origin_hour[type].sat %>" checked='checked'>
-          <%= @origin_hour[type].sat %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][sat]" value="<%= @origin_hour[dummy_type].sat %>" checked='checked'>
+          <%= @origin_hour[dummy_type].sat %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][sat]" value="<%= hour.sat %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][sat]" value="<%= hour.sat %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.sat %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][sat]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
         
         sun:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][sun]" value="<%= @origin_hour[type].sun %>" checked='checked'>
-          <%= @origin_hour[type].sun %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][sun]" value="<%= @origin_hour[dummy_type].sun %>" checked='checked'>
+          <%= @origin_hour[dummy_type].sun %> (original)<br>
         <% end %>
           
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][sun]" value="<%= hour.sun %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][sun]" value="<%= hour.sun %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.sun %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][sun]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
         
         appointment_only:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= @origin_hour[type].appointment_only %>" checked='checked'>
-          <%= @origin_hour[type].appointment_only %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= @origin_hour[dummy_type].appointment_only %>" checked='checked'>
+          <%= @origin_hour[dummy_type].appointment_only %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][appointment_only]" value="<%= hour.appointment_only %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.appointment_only %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][appointment_only]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
         
         comment:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][comment]" value="<%= @origin_hour[type].comment %>" checked='checked'>
-          <%= @origin_hour[type].comment %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][comment]" value="<%= @origin_hour[dummy_type].comment %>" checked='checked'>
+          <%= @origin_hour[dummy_type].comment %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][comment]" value="<%= hour.comment %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.comment %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][comment]" value="">
         <input type='text' class="other" value=""><br><br></div><div class="attr_block">
         
         walkin_only:<br>
-        <% if not (@origin_hour.nil? or @origin_hour[type].nil?) %>
-          <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= @origin_hour[type].walkin_only %>" checked='checked'>
-          <%= @origin_hour[type].walkin_only %> (original)<br>
+        <% if not (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>
+          <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= @origin_hour[dummy_type].walkin_only %>" checked='checked'>
+          <%= @origin_hour[dummy_type].walkin_only %> (original)<br>
         <% end %>
         
         <% array.each do |hour| %>
-         <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= hour.walkin_only %>" <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>checked='checked'<% end %>>
+         <input type="radio" name="hour[<%= type %>][walkin_only]" value="<%= hour.walkin_only %>" <% if (@origin_hour.nil? or @origin_hour[dummy_type].nil?) %>checked='checked'<% end %>>
          <span><%= hour.walkin_only %></span><br>
         <% end %>
         <input type="radio" name="hour[<%= type %>][walkin_only]" value="">
