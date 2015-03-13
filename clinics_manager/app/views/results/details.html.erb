@@ -666,7 +666,8 @@
         $("input[name='" + name + "']").each(function(){
           $this = $(this);
           
-          if($.inArray($this.val(), value)){
+          if($.inArray($this.val(), value) === -1){
+            console.log($this.val());
             if($this.val() != 'on')
               value.push($this.val());
           }
