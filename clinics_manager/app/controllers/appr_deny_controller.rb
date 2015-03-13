@@ -1,4 +1,4 @@
-class ApprDenyController < ApplicationController
+class ApprDenyController < SecuredController
   def approve
     @form_params = params[:clinic]
     @clinic_insert = ClinicInsert.find(params[:transc_id])
