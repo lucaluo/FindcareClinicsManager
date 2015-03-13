@@ -1,4 +1,4 @@
-class ApprDenyController < ApplicationController
+class ApprDenyController < SecuredController
   def approve
     @form_params = params[:clinic]
     @clinic_insert = ClinicInsert.find(params[:transc_id])
@@ -54,6 +54,7 @@ class ApprDenyController < ApplicationController
       end
     end
 
+    redirect_to list_url
   end
 
 
@@ -70,5 +71,7 @@ class ApprDenyController < ApplicationController
       @clinic_insert.approve = "Y"
       @clinic_insert.save
     end
+    
+    redirect_to list_url
   end
 end

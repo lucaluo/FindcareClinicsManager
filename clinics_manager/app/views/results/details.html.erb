@@ -438,12 +438,19 @@
     <% end %>
     <%= f.radio_button :payment_comments, "", :checked => false %>
     <input id='other_payment_comments' type='text' class="other" value="">
-    <br><br></div><br>
+    <br><br></div><br><hr><hr><hr>
     
     HOURS:<br><br>
     <% @clinic_insert_hour.each do |type, array| %>
       <% if not array.empty? %>
-        <div class="hours_block" id="<%= type %>">
+        <div class="hours_block" id="<%= type %>"
+          <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
+          data-status="add"
+          <% else %>
+          data-status="update"
+          <% end %>
+        >
+        <hr>
         <%= type %><br>
         
         <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
@@ -597,24 +604,24 @@
         <input type='text' class="other" value=""><br></div>
         </div>  <!-- hours_block -->
       <% end %> <!-- if not empty -->
-    <% end %>
+    <% end %><br><hr><hr><hr>
     
     SERVICE:<br><br>
     <% if not @clinic_insert_service['ADD'].empty? %>
-      add:<br>
+      New Services:<br>
       <% @clinic_insert_service['ADD'].each do |service_abbr| %>
         <input type="checkbox" name="service_add[]" value="<%= service_abbr %>" checked ="checked"><%= service_abbr %><br>
       <% end %>
     <% end %><br>
     
     <% if not @clinic_insert_service['DELETE'].empty? %>
-      delete:<br>
+      Delete Services:<br>
       <% @clinic_insert_service['DELETE'].each do |service_abbr| %>
         <input type="checkbox" name="service_delete[]" value="<%= service_abbr %>" checked = "checked"><%= service_abbr %><br>
       <% end %>
     <% end %>
     
-    origin:<br>
+    Original Services:<br>
     <% @clinic.service.each do |is| %>
       <%= is.service_abbr %><br>
     <% end %>
@@ -708,14 +715,15 @@
             }
           });
 
-          console.log("id is:" + id);
-          <% if not (@origin_clinic.nil? or @origin_hour.nil? or @origin_hour[id].nil?) %>
-          if(value.length <= 2){
-            $this.parent(".attr_block").hide();
-          } else
-            has_change = true;
-          if(!has_change) $(this).hide();
-          <% end %>
+          if($block.attr('data-status') == 'update'){
+            if(value.length <= 2){
+              $this.parent(".attr_block").hide();
+            } else
+              has_change = true;
+            if(!has_change) $(this).hide();
+          }
+
+
         }
         
       });
