@@ -707,6 +707,8 @@
               $this.remove();
             }
           });
+
+          console.log("id is:" + id);
           <% if not (@origin_clinic.nil? or @origin_hour.nil? or @origin_hour[id].nil?) %>
           if(value.length <= 2){
             $this.parent(".attr_block").hide();
