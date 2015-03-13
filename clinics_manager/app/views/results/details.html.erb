@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  
+  <style>
+    form{
+      display:inline;
+    }
+    input[type="submit"]{
+      width: 100px;
+      height: 40px;
+    }
+  </style>
 </head>
 
 <body>
   <%= form_for @clinic, :url => {:action => "approve", :controller => "appr_deny"}, :html => {:class => ""} do |f| %>
     <input type="hidden" name="transc_id" value="<%= @transc_id %>">
     
+    <h1>Clinic Infomation</h1>
     <div class="attr_block">
     clinic_name:<br>
     <% if not @origin_clinic.nil? %>
@@ -440,7 +449,7 @@
     <input id='other_payment_comments' type='text' class="other" value="">
     <br><br></div><br><hr><hr><hr>
     
-    HOURS:<br><br>
+    <h1>HOURS:</h1><br>
     <% @clinic_insert_hour.each do |type, array| %>
       <% if not array.empty? %>
         <div class="hours_block" id="<%= type %>"
@@ -451,7 +460,7 @@
           <% end %>
         >
         <hr>
-        <%= type %><br>
+        <h3><%= type %></h3>
         
         <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
         <input type="checkbox" class="hour_approve_checkbox"> Disapprove<br><br>
@@ -606,25 +615,25 @@
       <% end %> <!-- if not empty -->
     <% end %><br><hr><hr><hr>
     
-    SERVICE:<br><br>
+    <h1>SERVICE:</h1><br>
     <% if not @clinic_insert_service['ADD'].empty? %>
-      New Services:<br>
+      <h3>New Services:</h3><br>
       <% @clinic_insert_service['ADD'].each do |service_abbr| %>
         <input type="checkbox" name="service_add[]" value="<%= service_abbr %>" checked ="checked"><%= service_abbr %><br>
       <% end %>
     <% end %><br>
     
     <% if not @clinic_insert_service['DELETE'].empty? %>
-      Delete Services:<br>
+      <h3>Delete Services:</h3><br>
       <% @clinic_insert_service['DELETE'].each do |service_abbr| %>
         <input type="checkbox" name="service_delete[]" value="<%= service_abbr %>" checked = "checked"><%= service_abbr %><br>
       <% end %>
     <% end %>
     
-    Original Services:<br>
+    <h3>Original Services:</h3><br>
     <% @clinic.service.each do |is| %>
       <%= is.service_abbr %><br>
-    <% end %>
+    <% end %><hr><hr><hr><br>
     
     <%= f.submit "Submit" %>
     
