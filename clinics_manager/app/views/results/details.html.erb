@@ -443,7 +443,13 @@
     HOURS:<br><br>
     <% @clinic_insert_hour.each do |type, array| %>
       <% if not array.empty? %>
-        <div class="hours_block" id="<%= type %>">
+        <div class="hours_block" id="<%= type %>"
+          <% if (@origin_hour.nil? or @origin_hour[type].nil?) %>
+          data-status="add"
+          <% else %>
+          data-status="update"
+          <% end %>
+        >
         <hr>
         <%= type %><br>
         
@@ -708,13 +714,13 @@
               $this.remove();
             }
           });
-          <% if not (@origin_clinic.nil? or @origin_hour.nil? or @origin_hour[id].nil?) %>
-          if(value.length <= 2){
-            $this.parent(".attr_block").hide();
-          } else
-            has_change = true;
-          if(!has_change) $(this).hide();
-          <% end %>
+          if($block.attr('data-status') == 'update'){
+            if(value.length <= 2){
+              $this.parent(".attr_block").hide();
+            } else
+              has_change = true;
+            if(!has_change) $(this).hide();
+          }
         }
         
       });

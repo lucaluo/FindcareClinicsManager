@@ -54,6 +54,7 @@ class ApprDenyController < SecuredController
       end
     end
 
+    redirect_to list_url
   end
 
 
@@ -70,5 +71,7 @@ class ApprDenyController < SecuredController
       @clinic_insert.approve = "Y"
       @clinic_insert.save
     end
+    
+    redirect_to list_url
   end
 end
