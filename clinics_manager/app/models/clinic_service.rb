@@ -3,5 +3,5 @@ class ClinicService < ActiveRecord::Base
   self.primary_key = "dummy_service_pk"
   belongs_to :clinic
   belongs_to :service, :foreign_key => "service_abbr"
-  validates :service_abbr, :clinic_id, :dummy_service_pk, :presence=> true
+  validates :service_abbr, :clinic_id, :presence=> true
 end

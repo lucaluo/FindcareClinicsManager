@@ -24,13 +24,14 @@ class ApprDenyController < SecuredController
     @hours = params[:hour]
     if @hours != nil
       @hours.each do |type, value|
-        if type == "no type" then type = "" end
+        if type == "notype" then type = "" end
         @clinic_hour = Hours.where(:clinic_id => @clinic.clinic_id, :hour_type => type)
         if !@clinic_hour.empty?()
           @clinic_hour[0].update_attributes(value)
-        elsif @clinic_hour[0] == nil
+        else
           @new_clinic_hour = Hours.new(value)
           @new_clinic_hour.clinic_id = @clinic.clinic_id
+          @new_clinic_hour.hour_type = type
           @new_clinic_hour.save
         end
       end
@@ -40,10 +41,16 @@ class ApprDenyController < SecuredController
     if @clinic_services_add != nil
       @clinic_services_add.each do |service_add|
         new_clinic_service = ClinicService.new
-        new_clinic_service.update_attributes(service_add)
-        new_clinic_service.save
+        new_clinic_service.service_abbr = service_add
+        new_clinic_service.clinic_id = @clinic.clinic_id
+        if ClinicService.where(:clinic_id => @clinic.clinic_id, :service_abbr => service_add).empty?
+          new_clinic_service.save
+        end
+        puts new_clinic_service.inspect
       end
     end
+
+    
     @clinic_services_delete = params[:service_delete]
     if @clinic_services_delete != nil
       @clinic_services_delete.each do |service_delete|
