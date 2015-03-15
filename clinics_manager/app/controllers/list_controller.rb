@@ -5,6 +5,7 @@ class ListController < SecuredController
 
     @h = createHash(clinic_insert)
     @title = 'List New Clinics'
+    @num = 0
     render "list/list"
   end
 
@@ -13,6 +14,7 @@ class ListController < SecuredController
 
     @h = createHash(clinic_insert)
     @title = 'List All Clinics'
+    @num = 1
     render "list/list"
   end
 
@@ -20,6 +22,7 @@ class ListController < SecuredController
   	clinic_insert = ClinicInsert.where('approve' => :Y)
     @h = createHash(clinic_insert)
     @title = 'List Approved Clinics'
+    @num = 2
     render "list/list"
   end
 
